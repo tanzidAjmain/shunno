@@ -1,6 +1,6 @@
 import { Geist, Pinyon_Script } from "next/font/google";
-import Transition from './provider';
-import TransitionProvider from "./provider";
+
+
 
 
 

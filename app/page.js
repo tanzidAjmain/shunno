@@ -1,30 +1,19 @@
 'use client';
 import localFont from 'next/font/local';
 import gsap from "gsap";
-import Link from 'next/link';
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 
 
 
 
-export const Nineteen = localFont({
-  src: './fonts/1942.ttf', 
-   variable: '--font-nineteen',
-});
 
 export const Hol = localFont({
   src: './fonts/holstein.ttf', 
    variable: '--font-hol',
 });
 
-export const Num = localFont({
-  src: './fonts/Numberpile.otf', 
-   variable: '--font-num',
-});
 
 
 
@@ -41,7 +30,7 @@ const router = useRouter()
     const counter = { val: 0 };
     tl.to(counter, {
       val: 100,
-      duration: 3,
+      duration: 2,
       ease: "power3.out",
       onUpdate: () => {
         const el = document.querySelector(".loader h1");
@@ -52,7 +41,7 @@ const router = useRouter()
     tl.to(".logo", {
       opacity: 1,
       duration: 0.5,
-      delay: 0.8,
+      delay: 1,
       ease: "power3.out",
     });
 
@@ -60,7 +49,7 @@ const router = useRouter()
       opacity: 0,
       ease: "power3.inOut",
       duration: 0.8,
-      delay: 0.5,
+      delay: 0.2,
       onComplete: () => {
         document.querySelector(".loader")?.remove();
       },
@@ -135,7 +124,7 @@ const router = useRouter()
     <h1 className={`${Hol.className} ${Hol.variable} text-[#c80000] text-[20vw] ml-2`}>
       *
     </h1>
-    <img src="/bw-logo.jpg" alt="loader" className="logo pointer-events-none md:w-4dw absolute opacity-0 w-10dw p-5 ">
+    <img src="/bw-logo.jpg" alt="loader" className="logo pointer-events-none  absolute opacity-0 p-5 ">
     </img>
     </div>
 
@@ -143,36 +132,37 @@ const router = useRouter()
 
 
     
-      <div  className="header opacity-0 fixed z-10 flex flex-row justify-between px-5 py-3 min-w-screen ">
-        <h1 className=" md:text-[1.5vw]  text-[3vw]  font-bold">
-          The Garden  <span className="text-[#c80000]  animate-pulse">Died.</span> 
+      <div  className="header opacity-0 fixed z-10 flex flex-col justify-start px-5 py-3 min-w-screen ">
+        <h1 className=" md:text-[1vw]  text-[3vw]  font-">
+          THE GARDEN  <span className="border-b border-[#c80000] ">DIED</span> 
         </h1>
-        <p className="md:text-[4vw] hover:rotate-180 duration-700 ease-in-out hover:text-[#c80000] text-[6vw] font-bold ">
-          *
-        </p>
-        <h1 className="md:text-[1.5vw] text-[3vw]  font-bold ">
-          a long time ago.
+        <h1 className="md:text-[1vw] text-[3vw] flex  font-stretch-200% ">
+          A   LONG  TIME   AGO.
         </h1>
       </div>
    
   
 
-  <div className="flex flex-col items-center justify-center min-h-screen ">
+  <div className="flex mr-[5vw] flex-col items-center justify-center min-h-screen ">
     <div className="hero">
     
     </div>
-      <div className="entry opacity-0 w-full z-4 pb-6 flex flex-row place-items-end justify-between min-h-screen min-w-screen">
-        <div className="flex flex-row  justify-around items-center min-w-screen  ">
-       
-        <h1  className={`${Hol.className} ${Hol.variable} py-4  pl-2 flex flex-row   text-black md:text-[1.5vw]  text-[3.5vw] font-bold hover:animate-pulse pointer  transition-all duration-300 ease-in-out  `}>
-         The <p className=" pl-1 "> Garden.</p>
+      <div className="entry opacity-0 w-full z-4 pb-6 flex flex-row place-items-end justify-center min-h-screen min-w-screen">
+        <div className="flex flex-row  justify-end items-end min-w-screen  ">
+       <div>
+        <h1>
+          ENTER 
         </h1>
-        <h1 className={`${Hol.className} ${Hol.variable} py-4 text-black md:text-[1.5vw]  text-[5vw] font-bold  `}>
+        <h1  className={`${Hol.className} ${Hol.variable}  flex flex-row   text-black md:text-[1.1vw]  text-[3.5vw] font-bold hover:animate-pulse pointer  transition-all duration-300 ease-in-out  `}>
+         THE <p className=" pl-1  "> GARDEN .</p>
+        </h1>
+       </div>
+        {/* <h1 className={`${Hol.className} ${Hol.variable} py-4 text-black md:text-[1.5vw]  text-[5vw] font-bold  `}>
         ----------------------
-        </h1>
+        </h1> */}
 
         <div onClick={nextPageHandler} >
-        <img className=" gardenNav w-[15vw] md:w-[5vw] p-3 border-2 rounded-full  hover:border-[#c80000]  ease-in-out duration-300" src='/arrow-up-right.svg'/>
+        <img className=" gardenNav ml-2 border  w-[12vw] md:w-[3.5vw] p-3  rounded-full  hover:border-[#c80000]  ease-in-out duration-300" src='/arrow-up-right.svg'/>
         </div>
        </div>
 

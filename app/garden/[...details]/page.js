@@ -24,9 +24,6 @@ export default function GardenProductPage() {
   const params = useParams();
 
   console.log(params?.details)
-
-   
-
        const rawName = params?.details?.[1] ?? "";
        const productName = (() => {
   try {

@@ -22,7 +22,7 @@ export default function GardenPage() {
 
   // console.log(inc)
   
-  const [cart, setCart] = useState(0);
+  // const [cart, setCart] = useState(0);
   const [products, setProducts] = useState([
     { id: 1, name: 'MONKEY FOR THE WILD', price: 2899, image: '/p1.png', description: 'A unique and captivating piece of art that embodies the spirit of the wild. This artwork features a monkey in its natural habitat, surrounded by lush greenery and vibrant colors. The intricate details and dynamic composition make it a standout addition to any collection.' , organicPercentage:'100' , date:'2024.09.01' , ml:15 ,qunatity: 1, Materials:["Cumin, Geranium, Bergamot, Indian Oud, Oakmoss, Juniper berries, In-House Co-Macerated Patchouli and Oud, Taifi rose, Deer Musk ( org. Nepal ) , Mysore Santal"] },
     { id: 2, name: 'MONKEY FOR THE SEGS', price: 2899, image: '/p1.png', description: 'A unique and captivating piece of art that embodies the spirit of the wild. This artwork features a monkey in its natural habitat, surrounded by lush greenery and vibrant colors. The intricate details and dynamic composition make it a standout addition to any collection.' , organicPercentage:'100' , date:'2024.09.01' , ml:15 ,qunatity: 1, Materials:["Cumin, Geranium, Bergamot, Indian Oud, Oakmoss, Juniper berries, In-House Co-Macerated Patchouli and Oud, Taifi rose, Deer Musk ( org. Nepal ) , Mysore Santal"] },
