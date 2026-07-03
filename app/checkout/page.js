@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import { useStore } from "../components/zustand";
 import axios from "axios";
 import * as validator from 'email-validator';
+import ReceivedPage from "../components/received";
 
 
 export const Hol = localFont({
@@ -13,6 +14,7 @@ export const Hol = localFont({
 
 export default function CheckoutPage() {
   const [country, setCountry] = useState('');
+  const [recieved, setRecieved] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
@@ -23,6 +25,7 @@ export default function CheckoutPage() {
   const [loading, setloading] = useState(false);
   const [wrongInfo, setWrongInfo] = useState(false);
   const [apiError, setApiError] = useState('');
+  const [orderId, setOrderId] = useState('');
   
   const cart = useStore(state => state.cart);
   const orderName = cart.map(itm=>{
@@ -30,7 +33,8 @@ export default function CheckoutPage() {
   });
 
   const handleSubmit = async (e) => {
-    // console.log(orderName)
+    let orderID = Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
+    setOrderId(orderID);
     e.preventDefault();
     if (!validator.validate(email)) {
       // console.log('Invalid email address');
@@ -38,6 +42,7 @@ export default function CheckoutPage() {
       return;
     }
     const orderDetails = {
+      orderID,
       name,
       email,
       country,
@@ -60,6 +65,7 @@ export default function CheckoutPage() {
       setApiError(responseError?.code || responseError?.error || 'ORDER_SEND_FAILED');
     } finally {
       setloading(false);
+      setRecieved(true);
     }
   }
   
@@ -72,10 +78,13 @@ export default function CheckoutPage() {
       {loading?
       <>
           <div className="h-full w-full flex flex-row justify-center items-center">
-            <h1 className="text-5xl text-[#c80000] animate-spin m-15">*</h1>
+            <h1 className={`${Hol.className} ${Hol.variable} text-5xl text-[#c80000] animate-spin m-15`}>*</h1>
           </div>
-      </> : 
-      <>
+      </> :
+      <>{
+        recieved?<ReceivedPage params={{ id: '12345',orderId,name,address,orderName }} /> :
+        <>
+
     <div className={`${Hol.className} ${Hol.variable} flex flex-col items-center justify-center w-full h-full]`}>
      
     
@@ -326,6 +335,8 @@ export default function CheckoutPage() {
       <button onClick={handleSubmit} type="submit" className=" border-2 border-[#c80000]  w-full my-4 py-2 px-4 rounded-lg hover:bg-[#c80000] hover:text-white transition-all ease-in-out">{country=="United States" ? "We're still working on US shipments :(" : "PROCEED"}</button>
       </form>
       </div>
+         </>
+      }
        </>}
       </>
     );

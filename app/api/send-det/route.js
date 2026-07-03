@@ -13,7 +13,9 @@ export async function POST(request) {
             );
         }
 
-        const { name,
+        const { 
+                orderID,    
+                name,
                 email,
                 country,
                 address,
@@ -21,7 +23,10 @@ export async function POST(request) {
                 district,
                 state,
                 apartment,
-                orderName
+                orderName,
+                review,
+                comment,
+                feedback
              } = await request.json();
 
         const transporter = nodemailer.createTransport({
@@ -36,8 +41,9 @@ export async function POST(request) {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
             subject: `New order from ${name}`,
-            text: `country: ${country}, email: ${email}, address: ${address}, divisions: ${divisions}, district: ${district}, state: ${state}, apartment: ${apartment}, cart: ${JSON.stringify(orderName)}`
+            text: `Order ID: ${orderID}, country: ${country}, email: ${email}, address: ${address}, divisions: ${divisions}, district: ${district}, state: ${state}, apartment: ${apartment}, cart: ${JSON.stringify(orderName)}, review: ${review}, comment: ${comment}, feedback: ${feedback}`,
         };
+
 
         await transporter.sendMail(mailOptions);
 

@@ -33,7 +33,6 @@ export default function ManifestoPage() {
       ease: "none",
       scrollTrigger: {
         trigger: ".heroSection",
-        // pin: true,
         start: "top bottom", 
         end: "bottom bottom",
         scrub: 3.5,

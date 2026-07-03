@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRouter } from 'next/navigation';
+import  * as textSplitter from 'gsap/SplitText'
 
 
 
@@ -19,13 +20,20 @@ export const Hol = localFont({
 
 export default function Home() {
 
+
+
 const router = useRouter()
 
 
-  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(useGSAP, textSplitter);
 
   useGSAP(() => {
+
+    const splitter = textSplitter.SplitText.create(".headerText", { type: "lines, words" });
+
     const tl = gsap.timeline();
+
+
 
     const counter = { val: 0 };
     tl.to(counter, {
@@ -73,12 +81,24 @@ const router = useRouter()
       ease: "expo.out",
     });
 
-    tl.to(".header", {
-      duration: 1,
-      opacity: 1,
+    tl.from(splitter.words, {
+      delay: 0.5,
+      y: 30,
+      skewY:10,
+      stagger: 0.18,
+      opacity: 0,
       ease: "power3.out",
     });
 
+    // tl.to(splitter.lines, {
+    //   borderB: "1px solid #c80000",
+    //   duration: 1.5,
+    //   ease: "power3.out",
+    // })
+
+    
+
+   
     tl.to(".entry", {
       opacity: 1,
       y: -30,
@@ -132,13 +152,21 @@ const router = useRouter()
 
 
     
-      <div  className="header opacity-0 fixed z-10 flex flex-col justify-start px-5 py-3 min-w-screen ">
-        <h1 className=" md:text-[1vw]  text-[3vw]  font-">
-          THE GARDEN  <span className="border-b border-[#c80000] ">DIED</span> 
+      <div  className="header  fixed z-10 flex flex-col justify-start px-5 py-3 min-w-screen ">
+        <div className='max-w-30'>
+
+        <h1 className="headerText md:text-[1vw]  text-[3vw]  font-">
+          THE GARDEN  <span className="italic">DIED</span> 
         </h1>
-        <h1 className="md:text-[1vw] text-[3vw] flex  font-stretch-200% ">
-          A   LONG  TIME   AGO.
+        <div className='flex flex-row items-center justify-start'>
+
+        <h1 className="headerText md:text-[1vw] text-[3vw] font-stretch-200% ">
+          A   LONG  TIME   AGO. 
         </h1>
+        <span className="animate-pulse text-2xl text-[#c80000] px-2">*</span>
+        {/* <div className='liner w-0 h-px bg-[#c80000]'></div> */}
+        </div>
+        </div>
       </div>
    
   
