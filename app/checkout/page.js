@@ -22,6 +22,7 @@ export default function CheckoutPage() {
   const [apartment, setApartment] = useState('');
   const [loading, setloading] = useState(false);
   const [wrongInfo, setWrongInfo] = useState(false);
+  const [apiError, setApiError] = useState('');
   
   const cart = useStore(state => state.cart);
   const orderName = cart.map(itm=>{
@@ -50,10 +51,13 @@ export default function CheckoutPage() {
 
     try {
       setloading(true);
+      setApiError('');
       const response = await axios.post('/api/send-det', orderDetails);
       console.log(response.data.message);
     } catch (error) {
-      console.error('Error sending order details:', error);
+      const responseError = error.response?.data;
+      console.error('Error sending order details:', responseError || error.message);
+      setApiError(responseError?.code || responseError?.error || 'ORDER_SEND_FAILED');
     } finally {
       setloading(false);
     }
@@ -115,6 +119,7 @@ export default function CheckoutPage() {
       </div>
       </div>
       <div>{wrongInfo && <p className="text-red-500">* Please provide valid information</p>}</div>
+      <div>{apiError && <p className="text-red-500">* Order email failed: {apiError}</p>}</div>
       <div className="border-b mb-4">
       <label className={`block my-2 mx-1  text-sm`}>NAME<span className="text-[#c80000]"> //</span></label>
       <input type="text"  onChange={(e) => setName(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />

@@ -1,8 +1,18 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+export const runtime = "nodejs";
+
 export async function POST(request) {
     try{
+        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+            console.error("Missing EMAIL_USER or EMAIL_PASS environment variable");
+            return NextResponse.json(
+                { error: "Email service is not configured", code: "EMAIL_ENV_MISSING" },
+                { status: 500 }
+            );
+        }
+
         const { name,
                 email,
                 country,
@@ -33,7 +43,15 @@ export async function POST(request) {
 
         return NextResponse.json({ message: "Email sent successfully" });
     } catch (error) {
-        console.error("Error sending email:", error);
-        return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+        console.error("Error sending email:", {
+            message: error.message,
+            code: error.code,
+            command: error.command,
+            response: error.response,
+        });
+        return NextResponse.json(
+            { error: "Failed to send email", code: error.code || "EMAIL_SEND_FAILED" },
+            { status: 500 }
+        );
     }
 }
