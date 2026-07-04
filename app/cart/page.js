@@ -68,7 +68,7 @@ useEffect(() => {
               </div>
               </div>
               {/* <div className=' border w-[50vw]'></div> */}
-              <div>
+              <div className='flex flex-row items-center justify-center h-full'>
 
               <button onClick={()=>{router.push("/checkout")}} onMouseEnter={()=>{
                 gsap.to(".aster", {
@@ -102,8 +102,8 @@ useEffect(() => {
                   ease: "power3.out",
                 });
               }}
-              className={`px-4 mx-2 py-2 text-[#c80000] whitespace-nowrap hover:text-white rounded-xs border hover:bg-[#a01000] transition-colors duration-300  ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.75vh] font-bold`}>
-                      Garden
+              className={`px-4  mx-2 py-3 m-1 text-[#c80000] whitespace-nowrap hover:text-white rounded-full border hover:bg-[#a01000] transition-colors duration-300  ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.75vh] font-bold`}>
+                      <img src='/arrow-up-right.svg' className='-rotate-135 '/>
              </button>
              </div>
       </div>
