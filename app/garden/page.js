@@ -93,7 +93,7 @@ gsap.ticker.lagSmoothing(0);
           products.map((product,i) => (
             <div key={`${product.id}-${i}`} className="flex xl:flex-row flex-col items-stretch justify-center mb-14  p-4 mt-40  w-[90vw] md:w-[50vw]">
             <div className=" flex duration-300  flex-row items-center justify-center md:justify-start md:items-start ">
-              <h1 className='shadow-xl text-[#c80000]  md:text-[4vw] text-[7vw] absolute z-99  md:px-13 px-6.5 md:mt-[-10vh] md:ml-[-5vh] py-2.5 md:py-5 rounded-full skew-y-9'>{i+1}</h1>
+              <h1 className='shadow-xl text-[#c80000]  md:text-[4vw] text-[7vw] absolute z-99  md:px-13 px-6.5 md:mt-[-10vh] md:ml-[-5vh] py-2.5 md:py-5 rounded-full '>{i+1}</h1>
             </div>
 
               <Image src={product.image} alt={product.name} width={5000} height={200} className="w-full z-99 rounded-t-4xl md:rounded-4xl h-auto p-4" />

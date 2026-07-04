@@ -47,10 +47,15 @@ export default function ManifestoPage() {
     
     <div className="flex w-full min-h-screen flex-row items-center justify-center">
       <img src="/logo.jpg" className="fixed opacity-5"/>
+      <div className="flex flex-row">
       <h1 className="text-black text-[4vw] md:text-[1.5vw] whitespace-nowrap">HOW <span className="text-[#c80000] px-10">SHUNNO/O/OSHIM </span>
     CAME TO EXISTENCE "</h1>
+    <img src="/arrow-up-right.svg" className="animate-pulse px-3 rotate-135">
+    </img>
     </div>
-      <section className="heroSection my-10 flex w-full min-h-screen flex-col items-center justify-center">
+
+    </div>
+      <section className="heroSection mb-50 flex w-full min-h-screen flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-start w-full h-ful">
         <p className="heroText text-2.5xl border-b">THE ORIGIN</p>
         <h1 className="text-[5vw] heroText w-[80vw] block ">

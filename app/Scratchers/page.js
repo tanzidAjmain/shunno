@@ -20,6 +20,7 @@ export default function ScratchersPage() {
   const [r,setR] = useState(false);
   const [f,setF] = useState(false);
   const [load,setload] = useState(false);
+  const [collected,setCollected] = useState(false)
 
   return (
     <div className={`${Hol.className} ${Hol.variable} w-full h-full`}>
@@ -66,8 +67,9 @@ export default function ScratchersPage() {
       <>
       <div className="flex flex-row w-full p-2 items-center justify-center mt-10">
     <button onClick={async () => {
-      console.log('clicked')
-      try{
+      if(comment||review||feedback!==""){
+        setCollected(true);
+        try{
         setload(true);
         const response = await axios.post('/api/send-det', {
           review,
@@ -83,8 +85,12 @@ export default function ScratchersPage() {
         // setRecieved(true);
         console.log('feedback sent successfully');
       }
+      }else{
+        console.log('clicked');
+      }
+
     }}
-    disabled={load}
+    disabled={load || collected}
     className={`border w-[75vw] md:w-[45vw] cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1`}>{load?"****":<span>SEND</span>}</button>
     </div>
     </>:<></>

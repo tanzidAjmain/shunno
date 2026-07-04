@@ -15,9 +15,9 @@ export default function BottomMenu() {
         
       <>
       <div
-    className={`${Hol.className} ${Hol.variable} fixed bottom-4 right-4 md:bottom-8 md:right-8 z-100  overflow-auto`}
+    className={`${Hol.className} ${Hol.variable} fixed bottom-4 right-1 md:bottom-3 md:right-1 z-100  overflow-auto`}
   >
-    <div className="flex flex-col items-end leading-relaxed justify-center  text-black  px-4 py-4">
+    <div className="flex flex-col items-end leading-relaxed justify-center  text-black  px-1 py-4">
     <Link href="/Manifesto" onClick={e=>{
     
     }}>

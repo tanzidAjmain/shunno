@@ -68,6 +68,8 @@ useEffect(() => {
               </div>
               </div>
               {/* <div className=' border w-[50vw]'></div> */}
+              <div>
+
               <button onClick={()=>{router.push("/checkout")}} onMouseEnter={()=>{
                 gsap.to(".aster", {
                   paddingLeft:"75%",
@@ -85,6 +87,25 @@ useEffect(() => {
               className={`px-4 py-2 text-[#c80000] whitespace-nowrap hover:text-white rounded-xs border hover:bg-[#a01000] transition-colors duration-300  ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.75vh] font-bold`}>
                       check out
              </button>
+
+             <button onClick={()=>{router.push("/garden")}} onMouseEnter={()=>{
+               gsap.to(".aster", {
+                 paddingLeft:"75%",
+                 duration: 1,
+                 ease: "power3.out",
+                });
+              }}
+              onMouseLeave={()=>{
+                gsap.to(".aster", {
+                  paddingLeft:"0vw",
+                  duration: 1,
+                  ease: "power3.out",
+                });
+              }}
+              className={`px-4 mx-2 py-2 text-[#c80000] whitespace-nowrap hover:text-white rounded-xs border hover:bg-[#a01000] transition-colors duration-300  ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.75vh] font-bold`}>
+                      Garden
+             </button>
+             </div>
       </div>
     </>
     }
