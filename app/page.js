@@ -153,7 +153,7 @@ const router = useRouter()
 
     
       <div  className="header  fixed z-10 flex flex-col justify-start px-5 py-3 min-w-screen ">
-        <div className='max-w-30'>
+        <div className='max-w-60'>
 
         <h1 className="headerText md:text-[1vw]  text-[3vw]  font-">
           THE GARDEN  <span className="italic">DIED</span> 

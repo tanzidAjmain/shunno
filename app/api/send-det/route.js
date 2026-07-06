@@ -13,10 +13,13 @@ export async function POST(request) {
             );
         }
 
+        const time = new Date().toLocaleDateString('en-US')
+
         const { 
                 orderID,    
                 name,
                 email,
+                number,
                 country,
                 address,
                 divisions,
@@ -41,11 +44,27 @@ export async function POST(request) {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
             subject: `New order from ${name}`,
-            text: `Order ID: ${orderID}, country: ${country}, email: ${email}, address: ${address}, divisions: ${divisions}, district: ${district}, state: ${state}, apartment: ${apartment}, cart: ${JSON.stringify(orderName)}, review: ${review}, comment: ${comment}, feedback: ${feedback}`,
+            text: `Order ID: ${orderID}, country: ${country}, email: ${email}, address: ${address}, divisions: ${divisions}, district: ${district}, state: ${state}, apartment: ${apartment}, cart: ${JSON.stringify(orderName)}, review: ${review}, comment: ${comment}, feedback: ${feedback} number: ${number}`,
         };
 
+        const customerMailOption = {
+             from:process.env.EMAIL_USER, 
+             to:email,
+             subject: "ORDER FROM SHUNNO/O/OSHIM",
+             html:`
+             <div style='display:flex, justify:center, items:center width:full, height:full'>
+             <h1 >YOUR ORDER ${orderID} HAS BEEN RECIEVED!<h1/>
+             <h2 > YOUR ORDER WILL BE SHIPPED SOON.<h2/>
+             <p style="font-style:italic">Regards: SHUNNO/O/OSHIM ${time}<p/>
+             <div/>
+             `
+
+        }
 
         await transporter.sendMail(mailOptions);
+
+        await transporter.sendMail(customerMailOption)
+        console.log('customer mail send')
 
         return NextResponse.json({ message: "Email sent successfully" });
     } catch (error) {

@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { use, useState } from "react";
 import localFont from 'next/font/local';
 import { useStore } from "../components/zustand";
 import axios from "axios";
@@ -15,8 +15,10 @@ export const Hol = localFont({
 export default function CheckoutPage() {
   const [country, setCountry] = useState('');
   const [recieved, setRecieved] = useState(false);
+  const [wrongNum,setWrongNum] = useState(false)
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [number,setNumber] = useState('')
   const [address, setAddress] = useState('');
   const [divisions, setDivisions] = useState('');
   const [district, setDistrict] = useState('');
@@ -33,18 +35,31 @@ export default function CheckoutPage() {
   });
 
   const handleSubmit = async (e) => {
+
+    e.preventDefault();
+
+    const phoneDigits = number.replace(/\D/g, '');
+
+    if (phoneDigits.length !== 11){
+      setWrongInfo(true)
+      return;
+    }
+    setWrongInfo(false);
+    
     let orderID = Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
     setOrderId(orderID);
-    e.preventDefault();
+
     if (!validator.validate(email)) {
       // console.log('Invalid email address');
       setWrongInfo(true);
       return;
     }
+
     const orderDetails = {
       orderID,
       name,
       email,
+      number,
       country,
       address,
       divisions,
@@ -131,23 +146,31 @@ export default function CheckoutPage() {
       <div>{apiError && <p className="text-red-500">* Order email failed: {apiError}</p>}</div>
       <div className="border-b mb-4">
       <label className={`block my-2 mx-1  text-sm`}>NAME<span className="text-[#c80000]"> //</span></label>
-      <input type="text"  onChange={(e) => setName(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
+      <input type="text" required  onChange={(e) => setName(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
       </div>
       
       <div className="border-b mb-4">
       <label className={`block my-2 mx-1  text-sm`}>EMAIL<span className="text-[#c80000]"> //</span></label>
-      <input type="text"  onChange={(e) => setEmail(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
+      <input type="text" required  onChange={(e) => setEmail(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
       </div>
+
       
       <div className="border-b mb-4">
       <label className={`block my-2 mx-1 text-sm`}>COUNTRY<span className="text-[#c80000]"> //</span></label>
-      <input list="countries"  onChange={(e) => setCountry(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
+      <input list="countries" required  onChange={(e) => setCountry(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
       <datalist id="countries">
       <option value="Bangladesh"></option>
       <option value='United States'></option>
       </datalist>
       </div>
       
+      <div className="border-b mb-4">
+      <label className={`block my-2 mx-1 text-sm`}>{wrongInfo?"Wrong Number":"Phone"}{country=="Bangladesh"?" +880":'+1'}<span className="text-[#c80000]"> //</span></label>
+      <input type='tel' inputMode="numeric"
+             pattern="[0-9]{10}"  required
+              onChange={(e) => setNumber(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
+      </div>
+
       {
         country === 'Bangladesh' ?
         
@@ -330,9 +353,9 @@ export default function CheckoutPage() {
       
       <div className="border-b mb-4">
       <label className={`block my-2 mx-1 text-sm`}>ADDRESS<span className="text-[#c80000]"> //</span></label>
-      <input type="text"  onChange={(e) => setAddress(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
+      <input type="text" required onChange={(e) => setAddress(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
       </div>
-      <button onClick={handleSubmit} type="submit" className=" border-2 border-[#c80000]  w-full my-4 py-2 px-4 rounded-lg hover:bg-[#c80000] hover:text-white transition-all ease-in-out">{country=="United States" ? "We're still working on US shipments :(" : "PROCEED"}</button>
+      <button onClick={handleSubmit}  type="submit" className=" border-2 border-[#c80000]  w-full my-4 py-2 px-4 rounded-lg hover:bg-[#c80000] hover:text-white transition-all ease-in-out">{country=="United States" ? "We're still working on US shipments :(" : "PROCEED"}</button>
       </form>
       </div>
          </>

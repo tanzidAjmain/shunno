@@ -30,7 +30,7 @@ export default function CartLogo() {
                 <div className="flex flex-row items-center justify-center">
                 <h1 className={`${Hol.className} ${Hol.variable} md:text-[1.5vw] text-[5vw] px-2 py-0 bg-[#c80000] text-white rounded-full`}>{useStore(s=>s.items)}</h1>
                 <Link  href="/cart" className="pointer-events-auto">
-                <div className="flex flex-row items-center justify-center border rounded-full p-1 m-1">
+                <div className="flex flex-row items-center justify-center border rounded-full p-1 mx-3">
                 <img src='/astb.svg' alt='box' className=' h-[3vh] m-2 '>
                 </img>
                 { useStore(s=>s.items) > 0 ? (
