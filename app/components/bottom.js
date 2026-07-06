@@ -26,7 +26,7 @@ export default function BottomMenu() {
       </h1>
     </Link>
 
-    <Link href="/Manifesto">
+    <Link href="/randoms">
       <h1 className="md:text-[1.2vw] hover:line-through decoration-[#c80000] p-1 text-[4vw]  leading-none">
         Randoms <span className="text-[#c80000] md:text-[1.2vw] text-[4vw]">*</span>
       </h1>
