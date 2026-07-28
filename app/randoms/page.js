@@ -11,9 +11,9 @@ export default function RandomPage(){
 
 
     return(
-        <div className={`flex ${Hol.className} ${Hol.variable} flex-col justify-center items-center w-full`}>
+      <div className={`flex ${Hol.className} ${Hol.variable} flex-col justify-center items-center w-full`}>
        <div className="flex mb-10 flex-row justify-center items-center">
-        <h1 className="text-5xl">
+        <h1 className="text-5xl mt-10">
             <span className="text-5xl text-[#c80000]">*</span>Randoms
         </h1>
        </div>

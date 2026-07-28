@@ -19,7 +19,9 @@ export default function CartLogo() {
         
         
             <div className=" bg-white top-0 flex flex-row items-center fixed  w-screen justify-between text-white">
+              <Link href='/garden'>
               <Image src="/logo.jpg" alt="logo" width={100} height={150}></Image>
+              </Link>
               <div>
                 {/* <h1 className={`${Hol.className} ${Hol.variable} md:text-[1.5vw] text-[4vw] text-black`}> Garden </h1> */}
               </div>

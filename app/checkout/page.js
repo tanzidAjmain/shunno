@@ -1,10 +1,13 @@
 'use client'
-import { use, useState } from "react";
+import {  useState } from "react";
+import Link from 'next/link'
 import localFont from 'next/font/local';
 import { useStore } from "../components/zustand";
 import axios from "axios";
 import * as validator from 'email-validator';
 import ReceivedPage from "../components/received";
+
+
 
 
 export const Hol = localFont({
@@ -16,6 +19,7 @@ export default function CheckoutPage() {
   const [country, setCountry] = useState('');
   const [recieved, setRecieved] = useState(false);
   const [wrongNum,setWrongNum] = useState(false)
+  const [condition,setCondition] = useState(false)
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number,setNumber] = useState('')
@@ -34,13 +38,18 @@ export default function CheckoutPage() {
     return itm.name
   });
 
+  
+  const subTotal = cart.reduce((total, item) => total + item.price * item.amount, 0);
+
   const handleSubmit = async (e) => {
 
     e.preventDefault();
 
+    console.log(condition)
+
     const phoneDigits = number.replace(/\D/g, '');
 
-    if (phoneDigits.length !== 11){
+    if (phoneDigits.length !== 11 ){
       setWrongInfo(true)
       return;
     }
@@ -48,6 +57,17 @@ export default function CheckoutPage() {
     
     let orderID = Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
     setOrderId(orderID);
+
+    if(!condition){
+      setWrongInfo(true)
+      return
+    }
+    setWrongInfo(false);
+
+    if((name && address )== ''){
+      setWrongInfo(true)
+      return
+    }
 
     if (!validator.validate(email)) {
       // console.log('Invalid email address');
@@ -66,7 +86,8 @@ export default function CheckoutPage() {
       district,
       state,
       apartment,
-      orderName
+      orderName,
+      subTotal
     };
 
     try {
@@ -85,7 +106,6 @@ export default function CheckoutPage() {
   }
   
 
-  const subTotal = cart.reduce((total, item) => total + item.price * item.amount, 0);
   
   return (
     <>
@@ -355,6 +375,18 @@ export default function CheckoutPage() {
       <label className={`block my-2 mx-1 text-sm`}>ADDRESS<span className="text-[#c80000]"> //</span></label>
       <input type="text" required onChange={(e) => setAddress(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
       </div>
+      <div className="flex flex-row w-full justify-between items-center"> 
+      <label>
+        <span className="text-[#c80000] p-1">
+          *
+        </span>
+        I'VE READ THE <Link href='/policy' className="underline decoration-[#c80000] hover:italic ease-linear transition-all">TERMS & CONDITIONS</Link> 
+      </label>
+      <input required type='checkbox' onChange={e=>{
+        setCondition(true)
+      }} className=" h-10" ></input>
+      </div>
+      
       <button onClick={handleSubmit}  type="submit" className=" border-2 border-[#c80000]  w-full my-4 py-2 px-4 rounded-lg hover:bg-[#c80000] hover:text-white transition-all ease-in-out">{country=="United States" ? "We're still working on US shipments :(" : "PROCEED"}</button>
       </form>
       </div>

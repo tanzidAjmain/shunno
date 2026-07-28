@@ -42,22 +42,22 @@ export default function ScratchersPage() {
     {
       c?
       <>
-      <textarea  className="p-2 text-2xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]" type="box" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Leave a comment" />
+      <textarea  className="p-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]" type="box" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Leave a comment" />
       </>:<></>
     }
     {
       r?
       <>
       <div className="flex flex-col items-center justify-center">
-      <input placeholder="product name" className="p-2 mb-2 text-2xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[10vh] w-[75vw] md:w-[45vw]" value={product} type="text" onChange={(e) => setProduct(e.target.value)} />
-      <textarea className="p-2 text-2xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]" type="text" value={review} onChange={(e) => setReview(e.target.value)} placeholder="Leave a review" />
+      <input placeholder="product name" className="p-2 mb-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[10vh] w-[75vw] md:w-[45vw]" value={product} type="text" onChange={(e) => setProduct(e.target.value)} />
+      <textarea className="p-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]" type="text" value={review} onChange={(e) => setReview(e.target.value)} placeholder="Leave a review" />
       </div>
       </>:<></>
     }
     {
       f?
       <>
-      <textarea className="p-2 text-2xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]" value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder="Leave a feedback" />
+      <textarea className="p-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]" value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder="Leave a feedback" />
       </>:<></>
     }
     </div>

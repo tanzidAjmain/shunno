@@ -84,7 +84,7 @@ useEffect(() => {
                   ease: "power3.out",
                 });
               }}
-              className={`px-4 py-2 text-[#c80000] whitespace-nowrap hover:text-white rounded-xs border hover:bg-[#a01000] transition-colors duration-300  ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.75vh] font-bold`}>
+              className={`px-4 py-3 border-[#c80000] whitespace-nowrap rounded-xl hover:text-white  border hover:bg-[#a01000] transition-colors duration-300  ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.75vh] font-bold`}>
                       check out
              </button>
 

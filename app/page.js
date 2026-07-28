@@ -118,6 +118,12 @@ const router = useRouter()
         router.push("/garden");
       }
     });
+
+    gsap.to('.bg-soh',{
+      duration:1,
+      scale:.95,
+      ease:"power3"
+    })
   };
 
   return (
@@ -156,7 +162,7 @@ const router = useRouter()
         <div className='max-w-60'>
 
         <h1 className="headerText md:text-[1vw]  text-[3vw]  font-">
-          THE GARDEN  <span className="italic">DIED</span> 
+         A GARDEN THAT <span className="italic">DIED</span> 
         </h1>
         <div className='flex flex-row items-center justify-start'>
 

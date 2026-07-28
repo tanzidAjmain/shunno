@@ -49,18 +49,18 @@ export default function ManifestoPage() {
     })
 
     tl.from(".secondText",{
-      duration:.5,
+      duration:.2,
       opacity:1
     })
 
     tl.to(".lineup", {
       width: "100%",
-      duration: 1,
+      duration: .2,
       ease: "power2.inOut",
     });
 
 
-    tl.from(mottosplit.words,{
+    gsap.from(mottosplit.words,{
       opacity:0,
       y:48,
       stagger:0.118,
@@ -82,10 +82,10 @@ export default function ManifestoPage() {
     {/* <img src="/arrow-up-right.svg" className="animate-pulse px-3 rotate-135"></img> */}
     </div>
     <div className="flex flex-row items-center justify-start w-[90vw] md:w-[40vw]">
-      <div className="lineup w-0 h-px m-4 bg-[#c80000]"></div>
+      <div className="lineup w-0 h-px m-4 bg-black"></div>
     </div>
     <h1 className={`motto ${Hol.className} text-s italic`}>
-      --- THE ABYSS DOESNT KNOW HOW VOID IT IS <span className="text-[#c80000]">*</span>
+      --- THE ABYSS DOESN'T KNOW HOW VOID IT IS <span className="text-[#c80000]">*</span>
     </h1>
    </div>
    

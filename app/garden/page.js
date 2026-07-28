@@ -35,7 +35,7 @@ useEffect(() => {
 
 
 
-  gsap.registerPlugin(ScrollTrigger);
+ gsap.registerPlugin(ScrollTrigger);
 
  const lenis = new Lenis();
 
@@ -61,9 +61,8 @@ gsap.ticker.lagSmoothing(0);
       gsap.to('.prodList', {
         delay: 0.5,
         opacity: 1,
-        delay: 0.9,
         ease: "power3.out",
-        stagger: 0.5,
+        stagger: 0.15,
       })
 
     const tl = gsap.timeline();
@@ -88,10 +87,10 @@ gsap.ticker.lagSmoothing(0);
 
     <CartLogo />
 
-      <section className={`prodList opacity-0 ${Hol.className} ${Hol.variable} flex flex-col  items-center  justify-center min-h-screen w-screen overflow-scroll mt-10 mb-40`}>
+      <section className={` ${Hol.className} ${Hol.variable} flex flex-col  items-center  justify-center min-h-screen w-screen overflow-scroll mt-10 mb-40`}>
         {
           products.map((product,i) => (
-            <div key={`${product.id}-${i}`} className="flex xl:flex-row flex-col items-stretch justify-center mb-14  p-4 mt-40  w-[90vw] md:w-[50vw]">
+            <div key={`${product.id}-${i}`} className="prodList  opacity-0 flex xl:flex-row flex-col items-stretch justify-center mb-14  p-4 mt-40  w-[90vw] md:w-[50vw]">
             <div className=" flex duration-300  flex-row items-center justify-center md:justify-start md:items-start ">
               <h1 className='shadow-xl text-[#c80000]  md:text-[4vw] text-[7vw] absolute z-99  md:px-13 px-6.5 md:mt-[-10vh] md:ml-[-5vh] py-2.5 md:py-5 rounded-full '>{i+1}</h1>
             </div>

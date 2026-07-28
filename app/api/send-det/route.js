@@ -29,7 +29,8 @@ export async function POST(request) {
                 orderName,
                 review,
                 comment,
-                feedback
+                feedback,
+                subTotal
              } = await request.json();
 
         const transporter = nodemailer.createTransport({
@@ -44,7 +45,7 @@ export async function POST(request) {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
             subject: `New order from ${name}`,
-            text: `Order ID: ${orderID}, country: ${country}, email: ${email}, address: ${address}, divisions: ${divisions}, district: ${district}, state: ${state}, apartment: ${apartment}, cart: ${JSON.stringify(orderName)}, review: ${review}, comment: ${comment}, feedback: ${feedback} number: ${number}`,
+            text: `Order ID: ${orderID}, country: ${country}, email: ${email}, subtotal: ${subTotal} ,address: ${address}, divisions: ${divisions}, district: ${district}, state: ${state}, apartment: ${apartment}, cart: ${JSON.stringify(orderName)}, review: ${review}, comment: ${comment}, feedback: ${feedback} number: ${number}`,
         };
 
         const customerMailOption = {
@@ -64,7 +65,6 @@ export async function POST(request) {
         await transporter.sendMail(mailOptions);
 
         await transporter.sendMail(customerMailOption)
-        console.log('customer mail send')
 
         return NextResponse.json({ message: "Email sent successfully" });
     } catch (error) {

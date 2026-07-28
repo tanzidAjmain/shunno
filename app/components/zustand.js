@@ -29,6 +29,6 @@ export const useStore = create((set) => ({
             } else {
               return state; // No change if item not found
             }
-        })
+        }),   
       
 }));
