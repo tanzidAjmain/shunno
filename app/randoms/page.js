@@ -23,25 +23,8 @@ export default function RandomPage(){
         </h1>
        </div>
        <div className="h-full flex-col justify-center items-center ">
-        <h1 className="text-gray-700 mb-10">ARCHIVE. of SHUNNO</h1>
-        {
-          products.map((prod,i)=>(
-            <>
-            {
-              prod.archive?
-              <div className="" key={i+1}>
-              <h1>
-                {prod.name}
-              </h1>
-              <img src={prod.image}></img>
-            </div>
-              :<h1></h1>   
-            
-            }
-            </>
-          ))
-        }
-      
+        <h1 className="text-gray-700 mb-10 ">ARCHIVE. of SHUNNO</h1>
+        <p>NOTHING FOR NOW.</p>
         <BottomMenu/>
        </div>
        </div>
