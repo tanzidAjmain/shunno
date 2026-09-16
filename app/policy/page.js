@@ -56,7 +56,7 @@ export default function policyPage(){
         
         <div className={`${IBM.className}  flex w-full  justify-center`}>
         <h1 className="text-justify w-[70vw] p-05 mt-10 text-[4vw] md:text-3xl" >
-        We do not guarantee that all the items available at the www.byshunno.com online shop are in stock at the time of your order. In the case of incorrect stock balance affecting your order we will contact you by e-mail. Orto Parisi cannot warrant that the content of www.ortoparisi.com is at all time free of inaccuracies or typographical errors. Neither can we guarantee that all information is up-to-date. Orto Parisi may at any time change the content of the site and the items available in the product range. Though we strive to always display the correct texts, images and pricing in the site and web shop, errors may occur. If you have been charged the wrong amount when shopping from the web shop, we will give you the option of placing a new order with the correct price or canceling your order..</h1>
+        We do not guarantee that all the items available at the www.byshunno.com online shop are in stock at the time of your order. In the case of incorrect stock balance affecting your order we will contact you by e-mail. SHUNNO /O/ OSHIM does not gurantee that the content of www.byshunno.com is at all time free of inaccuracies. SHUNNO \O\ OSHIM may change the content of the site and the items available in the product range. We strive to always display the correct texts, images and pricing in the site and web shop, errors may occur. </h1>
         </div>
 
 
@@ -96,7 +96,7 @@ export default function policyPage(){
         
         <div className={`${IBM.className}  flex w-full  justify-center`}>
         <h1 className="text-justify w-[70vw] p-05 mt-10 text-[4vw] md:text-3xl" >
-            SHUNNO /O/ OSHIM reserves the right to seek remedies of law and blockade of your access to SHUNNO /O/ OSHIM if your violations of these terms and conditons can be seen.
+            SHUNNO /O/ OSHIM reserves the right to seek remedies of law and blockade of your access to SHUNNO /O/ OSHIM if your violation of these terms and conditons could be seen.
         </h1>
         </div>
 

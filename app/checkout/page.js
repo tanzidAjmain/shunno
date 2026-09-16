@@ -10,6 +10,7 @@ import ReceivedPage from "../components/received";
 
 
 
+
 export const Hol = localFont({
     src: '../fonts/holstein.ttf', 
      variable: '--font-hol',
@@ -34,31 +35,31 @@ export default function CheckoutPage() {
   const [orderId, setOrderId] = useState('');
   
   const cart = useStore(state => state.cart);
-  const orderName = cart.map(itm=>{
-    return itm.name
-  });
-
+  const orderName = []
   
   const subTotal = cart.reduce((total, item) => total + item.price * item.amount, 0);
-
+  
   const handleSubmit = async (e) => {
+    
+    cart.map(itm=>{
+      orderName.push(itm.name)
+    });
 
     e.preventDefault();
 
-    console.log(condition)
-
     const phoneDigits = number.replace(/\D/g, '');
 
-    if (phoneDigits.length !== 11 ){
+    if (phoneDigits.length !== 11  ){
       setWrongInfo(true)
       return;
     }
+
     setWrongInfo(false);
     
     let orderID = Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
     setOrderId(orderID);
 
-    if(!condition){
+    if(condition==false){
       setWrongInfo(true)
       return
     }
@@ -102,6 +103,7 @@ export default function CheckoutPage() {
     } finally {
       setloading(false);
       setRecieved(true);
+      useStore.getState().clearCart();
     }
   }
   
@@ -162,9 +164,12 @@ export default function CheckoutPage() {
       <h1 className="text-sm p-3 font-bold">Subtotal : BDT. {divisions=="Dhaka"?`${subTotal + 60}`:`${subTotal + 120}`}</h1>
       </div>
       </div>
+
+      
       <div>{wrongInfo && <p className="text-red-500">* Please provide valid information</p>}</div>
       <div>{apiError && <p className="text-red-500">* Order email failed: {apiError}</p>}</div>
       <div className="border-b mb-4">
+      <h1 className="text-black text-s mt-5 mb-5"> * IF YOU'RE MANUALLY PUTTING IN THE INFOS, PLEASE MAKE SURE TO WRITE THE FIRST LETTER IN CAPS</h1>
       <label className={`block my-2 mx-1  text-sm`}>NAME<span className="text-[#c80000]"> //</span></label>
       <input type="text" required  onChange={(e) => setName(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
       </div>
@@ -185,7 +190,7 @@ export default function CheckoutPage() {
       </div>
       
       <div className="border-b mb-4">
-      <label className={`block my-2 mx-1 text-sm`}>{wrongInfo?"Wrong Number":"Phone"}{country=="Bangladesh"?" +880":'+1'}<span className="text-[#c80000]"> //</span></label>
+      <label className={`block my-2 mx-1 text-sm`}>{wrongInfo?"Wrong Number / Put number without the calling code ":"Phone"}{country=="Bangladesh"?"+880":'+1'}<span className="text-[#c80000]"> //</span></label>
       <input type='tel' inputMode="numeric"
              pattern="[0-9]{10}"  required
               onChange={(e) => setNumber(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />

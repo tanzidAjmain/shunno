@@ -3,6 +3,7 @@ import { create } from "zustand";
 export const useStore = create((set) => ({
     cart:[],
     items:0,
+    detImage:"",
     increase: (payload = {}) =>
       set((state) => {
         // cart: [...state.cart, payload],
@@ -18,6 +19,8 @@ export const useStore = create((set) => ({
           }
         }
       }),
+      clearCart: () => set({ cart: [], items: 0 }),
+      setDetimage: (image) => set({ detImage: image }),
       removeItem:(id) => 
         set((state) => {
             const itemToRemove = state.cart.find(item => item.id === id);

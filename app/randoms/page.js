@@ -1,4 +1,7 @@
+'use client'
 import localFont from "next/font/local"
+import BottomMenu from "../components/bottom";
+import { DataProv } from "../components/provider";
 
   export const Hol = localFont({
     src: '../fonts/holstein.ttf', 
@@ -9,6 +12,8 @@ import localFont from "next/font/local"
 
 export default function RandomPage(){
 
+  const products = DataProv()
+  
 
     return(
       <div className={`flex ${Hol.className} ${Hol.variable} flex-col justify-center items-center w-full`}>
@@ -17,24 +22,27 @@ export default function RandomPage(){
             <span className="text-5xl text-[#c80000]">*</span>Randoms
         </h1>
        </div>
-       <div className="w-full flex flex-col md:flex-row justify-center items-center ">
-        <h1 className="text-gray-700">Nothing for now</h1>
-        {/* <div className="flex flex-rows w-full h-full justify-between p-3">
-          <img alt="photo" className="h-50.5 w-35.5" src="https://cdn.pixabay.com/photo/2026/06/26/05/28/05-28-31-5_1280.jpg" />
-        <div className="px-2 text-right">
-          <h1 className="text-3xl">Gecko</h1>
-          <p>lorem ipsum </p>
-        </div>
-        </div>
-
-          <div className="flex flex-rows w-full  h-full justify-between p-3">
-          <img alt="photo" className="h-50.5 w-35.5" src="https://cdn.pixabay.com/photo/2026/06/26/05/28/05-28-31-5_1280.jpg" />
-        <div className="px-2">
-          <h1 className="text-3xl text-right">Gecko</h1>
-          <p>lorem ipsum </p>
-        </div> */}
-
-        {/* </div> */}
+       <div className="h-full flex-col justify-center items-center ">
+        <h1 className="text-gray-700 mb-10">ARCHIVE. of SHUNNO</h1>
+        {
+          products.map((prod,i)=>(
+            <>
+            {
+              prod.archive?
+              <div className="" key={i+1}>
+              <h1>
+                {prod.name}
+              </h1>
+              <img src={prod.image}></img>
+            </div>
+              :<h1></h1>   
+            
+            }
+            </>
+          ))
+        }
+      
+        <BottomMenu/>
        </div>
        </div>
     )
