@@ -28,6 +28,8 @@ export default function GardenPage() {
   
   const inc = useStore(s=> s.increase);
   const setImg = useStore(s=> s.setDetimage);
+  const setDesctn = useStore(s=> s.setDesc);
+  const setNoteDiagraph = useStore(s=> s.setNoteDiagraph);
 
 
 useEffect(() => {
@@ -106,6 +108,8 @@ gsap.ticker.lagSmoothing(0);
               </div>
                 <Link onClick={() => {
                   setImg(product.image);
+                  setDesctn(product.description);
+                  setNoteDiagraph(product.notediagraph);
                   gsap.to('.motion', {
                     rotation: 360,
                   }) 
@@ -121,7 +125,7 @@ gsap.ticker.lagSmoothing(0);
                       <div className='flex flex-col items-startjustify-center'>
                         
                         <div className='flex flex-row w-full items-start justify-start flex-wrap mb-5 gap-1 text-justify'>
-                        <p className='text-[#c80000] text-l  w-full'> Materials: <br/></p>
+                        <p className='text-[#c80000] text-l  w-full'> / Materials: <br/></p>
                       {
                         product.materials.map((material, index) => (
                           <p key={index} className='text-black text-l'><span className='font-bold text-[#c80000]'></span>  {material},  <br/></p>

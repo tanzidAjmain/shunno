@@ -5,6 +5,14 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import localFont from "next/font/local";
 import BottomMenu from "../components/bottom";
+import { IBM_Plex_Mono } from "next/font/google";
+
+const IBM = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight:"400"
+  
+})
+
 
 
 export const Hol = localFont({
@@ -55,7 +63,7 @@ export default function ManifestoPage() {
 
     tl.to(".lineup", {
       width: "100%",
-      duration: .2,
+      duration: 2,
       ease: "power2.inOut",
     });
 
@@ -70,37 +78,40 @@ export default function ManifestoPage() {
   }, []);
 
   return (
-    <div className={`w-full h-full  ${Hol.variable} ${Hol.className} flex-col`}>
+    <div className={`w-full h-full  ${IBM.variable} ${IBM.className} flex-col`}>
     {/* <div className={`page-two absolute z-100 w-full h-full top-0 bg-black`}></div> */}
     
 
     <div className="flex w-full min-h-screen flex-col items-center justify-center">
       <img src="/logo.jpg" className="manImage fixed "/>
-      <div className="flex flex-row w-full items-center justify-center">
+      {/* <div className="flex flex-row w-full items-center justify-center">
       <h1 className="secondText text-black text-[4vw] md:text-[2vw] whitespace-nowrap">HOW <span className="text-[#c80000] px-10">SHUNNO/O/OSHIM </span>
     CAME TO EXISTENCE </h1>
-    {/* <img src="/arrow-up-right.svg" className="animate-pulse px-3 rotate-135"></img> */}
-    </div>
+    </div> */}
+    <h1 className={`motto ${IBM.className} text-l md:text-xl italic`}>
+      THE ABYSS DOESN'T KNOW HOW VOID IT IS
+    </h1>
     <div className="flex flex-row items-center justify-start w-[90vw] md:w-[40vw]">
       <div className="lineup w-0 h-px m-4 bg-black"></div>
+       <span className={`text-[#c80000] ${Hol.className}`}>*</span>
     </div>
-    <h1 className={`motto ${Hol.className} text-s italic`}>
-      --- THE ABYSS DOESN'T KNOW HOW VOID IT IS <span className="text-[#c80000]">*</span>
-    </h1>
    </div>
    
       <section className="heroSection mb-50 flex w-full min-h-screen flex-col items-center justify-center">
-        <div className="flex flex-col items-center text-left  justify-center m-4  w-[80vw] h-ful">
+        <div className="flex flex-col items-center text-left  justify-center m-4 w-[70vw] md:w-[60vw] h-full">
         <p className="heroText text-2.5xl border-b">THE ORIGIN</p>
-        <h1 className="text-[4vw] box-content text-justify mb-4 heroText ">
-        A unique and captivating piece of art that embodies the spirit of the wild. This artwork features a monkey in its natural habitat, surrounded by lush greenery and vibrant colors. The intricate details and dynamic composition make it a standout addition to any collection.
+        <h1 className="md:text-[2vw] text-[3vw] box-content text-justify  my-4 heroText ">
+        Before there was form, there was breath, there was scent, raw and sacred.
+        At shunno/o/oshim, we view scent not as a cosmetic enhancer rather as an substantial truth, something to be felt, something that carves something in the void of human soul. A bridge it is, spanning the total emptiness Shunno[zero] from which we emerge and the boundless cosmos Oshim[infinite] to which we return.
         </h1>
         </div>
+        <div className="flex flex-col items-center text-left  justify-center m-4 w-[70vw] md:w-[60vw] h-full">
 
-          <p className="heroText text-2.5xl border-b">THE FUTURE</p>
-        <h1 className="text-[5vw] heroText w-[80vw] block ">
-          lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <p className="heroText text-2.5xl border-b">THE BlOOD OF THE EARTH</p>
+        <h1 className="md:text-[2vw] text-[3vw] box-content text-justify  my-4 heroText  ">
+        We take pride in crafting strictly with 100% natural, uncompromised raw materials. Rare wild ouds, raw animalic musks, and botanical extracts form our palette. These are not approximations, they are living, breathing extractions harvested from the earth and for the earthlings. 
         </h1>
+        </div>
       </section>
       <BottomMenu/>
     </div>

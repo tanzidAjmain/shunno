@@ -4,6 +4,8 @@ export const useStore = create((set) => ({
     cart:[],
     items:0,
     detImage:"",
+    desc:"",
+    noteDiagraph:"",
     increase: (payload = {}) =>
       set((state) => {
         // cart: [...state.cart, payload],
@@ -21,6 +23,8 @@ export const useStore = create((set) => ({
       }),
       clearCart: () => set({ cart: [], items: 0 }),
       setDetimage: (image) => set({ detImage: image }),
+      setDesc: (description) => set({ desc: description }),
+      setNoteDiagraph: (diagraph) => set({ noteDiagraph: diagraph }),
       removeItem:(id) => 
         set((state) => {
             const itemToRemove = state.cart.find(item => item.id === id);

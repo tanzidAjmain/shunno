@@ -16,14 +16,15 @@ import { useStore } from '../../components/zustand';
 
 export default function GardenProductPage() {
 
-  console.log(useStore.getState().detImage)
 
   // const [cart, setCart] = useState(0);
 
   const inc = useStore(s=> s.increase);
   const params = useParams();
+  const description = useStore(s=> s.desc);
+  const noteDiagraph = useStore(s=> s.noteDiagraph);
+  console.log(description)
 
-  console.log(params?.details)
        const rawName = params?.details?.[0] ?? "";
        const productName = (() => {
   try {
@@ -83,13 +84,13 @@ export default function GardenProductPage() {
           THE THOUGHT BEHIND:
         </h1>
       <p className={`w-[85%] mt-10 p-4 box-content bg-white  flex md:flex-row flex-col items-center justify-around ${Hol.className} ${Hol.variable} text-black text-justify `}>
-        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
+      {description}
       </p>
 
     
 
       </div>
-      <img src='/notediagraph.jpg' alt="story" className="w-[85%] mt-2 p-4 bg-white  flex md:flex-row md:w-[35%] flex-col items-center justify-around line-through decoration-[#c80000] "/>
+      <img src={`${noteDiagraph}`} alt="NOTE DIAGRAPH" className="w-[85%] mt-2 p-4 bg-white  flex md:flex-row md:w-[35%] flex-col items-center justify-around line-through decoration-[#c80000] "/>
     </span>
     <div className="w-screen flex items-center justify-center mb-6">
       {
