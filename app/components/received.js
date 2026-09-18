@@ -9,7 +9,7 @@ const Hol = localFont({
 
 export default function ReceivedPage({ params }) { 
   return (
-    <div className={`${Hol.className} ${Hol.variable} mt-50 flex flex-col items-center justify-center w-full min-h-full]`}>
+    <div className={`${Hol.className} ${Hol.variable} mt-20 p-10 flex flex-col items-center justify-center w-full min-h-full]`}>
      <div className="flex flex-col border  p-2 items-center justify-center  h-full">
       <img src="/logo.jpg" className="w-[30vw] h-[30vh] md:w-[20vw] md:h-[20vh] object-contain" />
       <h1 className="text-5xl border-b-2 p-2">Receipt</h1>
