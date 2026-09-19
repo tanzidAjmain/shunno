@@ -112,6 +112,9 @@ export async function POST(request) {
                       <p style="margin: 0; font-size: 15px; font-weight: 600; color: #222222;">
                         &gt; ${orderName.join(", ")}
                       </p>
+                      <p style="margin: 0; font-size: 15px; font-weight: 600; color: #222222;">
+                        &gt; ${subTotal} BDT
+                      </p>
                     </div>
                   </td>
                 </tr>

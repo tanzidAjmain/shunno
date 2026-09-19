@@ -8,6 +8,7 @@ const Hol = localFont({
 });
 
 export default function ReceivedPage({ params }) { 
+  console.log(params)
   return (
     <div className={`${Hol.className} ${Hol.variable} mt-20 p-10 flex flex-col items-center justify-center w-full min-h-full]`}>
      <div className="flex flex-col border  p-2 items-center justify-center  h-full">
@@ -18,7 +19,7 @@ export default function ReceivedPage({ params }) {
       <h1>has been recieved.</h1>
       <p>NAME: {params.name}</p>
       <p>ADDRESS: {params.address}</p>
-      <p className="whitespace-pre-wrap">PRODUCT: {params.orderName.join(", ")}</p>
+      <p className="text-black whitespace-normal">SUBTOTAL: {params.subTotal} BDT</p>
       <Link href="/garden">
       <p className="text-[#c80000] italic mt-2 ">continue to garden?</p>
       </Link>

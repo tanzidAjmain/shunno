@@ -35,15 +35,16 @@ export default function CheckoutPage() {
   const [orderId, setOrderId] = useState('');
   
   const cart = useStore(state => state.cart);
-  const orderName = []
-  
+  const orderName = cart.map(itm=> itm.name);
+
   const subTotal = cart.reduce((total, item) => total + item.price * item.amount, 0);
   
+  
+
+  console.log(orderName)
+
   const handleSubmit = async (e) => {
     
-    cart.map(itm=>{
-      orderName.push(itm.name)
-    });
 
     e.preventDefault();
 
@@ -119,7 +120,7 @@ export default function CheckoutPage() {
           </div>
       </> :
       <>{
-        recieved?<ReceivedPage params={{ id: '12345',orderId,name,address,orderName }} /> :
+        recieved?<ReceivedPage params={{ id: '12345',orderId,name,address,subTotal }} /> :
         <>
 
     <div className={`${Hol.className} ${Hol.variable} flex flex-col items-center justify-center w-full h-full]`}>
