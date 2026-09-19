@@ -19,7 +19,7 @@ export default function ReceivedPage({ params }) {
       <h1>has been recieved.</h1>
       <p>NAME: {params.name}</p>
       <p>ADDRESS: {params.address}</p>
-      <p className="text-black whitespace-normal">SUBTOTAL: {params.subTotal} BDT</p>
+      {/* <p className="text-black whitespace-normal">SUBTOTAL: {params.subTotal} BDT</p> */}
       <Link href="/garden">
       <p className="text-[#c80000] italic mt-2 ">continue to garden?</p>
       </Link>

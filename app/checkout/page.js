@@ -120,7 +120,7 @@ export default function CheckoutPage() {
           </div>
       </> :
       <>{
-        recieved?<ReceivedPage params={{ id: '12345',orderId,name,address,subTotal }} /> :
+        recieved?<ReceivedPage params={{ id: '12345',orderId,name,address }} /> :
         <>
 
     <div className={`${Hol.className} ${Hol.variable} flex flex-col items-center justify-center w-full h-full]`}>
