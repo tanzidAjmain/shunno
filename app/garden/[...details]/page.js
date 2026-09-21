@@ -4,6 +4,7 @@ import CartLogo from '../../components/cartLogo';
 import localFont from 'next/font/local';
 import {useParams} from "next/navigation";
 import { useStore } from '../../components/zustand';
+import { DataProv } from '../../components/provider';
 
 
 
@@ -23,7 +24,8 @@ export default function GardenProductPage() {
   const params = useParams();
   const description = useStore(s=> s.desc);
   const noteDiagraph = useStore(s=> s.noteDiagraph);
-  console.log(description)
+  const detailImage = useStore(s=> s.detImage);
+  const { products } = DataProv();
 
        const rawName = params?.details?.[0] ?? "";
        const productName = (() => {
@@ -35,6 +37,10 @@ export default function GardenProductPage() {
      return rawName.replace(/-/g, " ").replace(/\+/g, " ").trim();
    }
  })();
+  const product = products.find((item) => String(item.id) === String(params?.details?.[1]));
+  const productDescription = description || product?.description || "Discover this independent natural perfume by Shunno O Oshim.";
+  const productImage = detailImage || product?.image || "/logo.jpg";
+  const productNoteDiagram = noteDiagraph || product?.notediagraph;
 
   return (
 
@@ -68,7 +74,7 @@ export default function GardenProductPage() {
 
     
       <div className='circle-border'>
-      <img  src={useStore.getState().detImage} alt={productName} className="w-[85%] md:w-[95%] h-auto m-5 rounded-3xl line-through decoration-[#c80000] "/>
+      <img src={productImage} alt={`${productName} niche perfume by Shunno O Oshim`} className="w-[85%] md:w-[95%] h-auto m-5 rounded-3xl line-through decoration-[#c80000] "/>
         </div>
       {/* </div> */}
       </div>
@@ -84,20 +90,20 @@ export default function GardenProductPage() {
           THE THOUGHT BEHIND:
         </h1>
       <p className={`w-[85%] mt-10 p-4 box-content bg-white  flex md:flex-row flex-col items-center justify-around ${Hol.className} ${Hol.variable} text-black text-justify `}>
-      {description}
+      {productDescription}
       </p>
 
     
 
       </div>
-      <img src={`${noteDiagraph}`} alt="NOTE DIAGRAPH" className="w-[85%] mt-2 p-4 bg-white  flex md:flex-row md:w-[35%] flex-col items-center justify-around line-through decoration-[#c80000] "/>
+      {productNoteDiagram && <img src={productNoteDiagram} alt={`Scent note diagram for ${productName}`} className="w-[85%] mt-2 p-4 bg-white flex md:flex-row md:w-[35%] flex-col items-center justify-around line-through decoration-[#c80000]" />}
     </span>
     <div className="w-screen flex items-center justify-center mb-6">
       {
         params?.details?.[3] === "FALSE" ? <>
         
         <button onClick={()=>{
-          inc({id:params?.details?.[1], image: useStore.getState().detImage, name: productName, price: params?.details?.[2], amount:1})
+          inc({id:params?.details?.[1], image: productImage, name: productName, price: params?.details?.[2], amount:1})
 
         }} className={`px-4 py-2 text-[#c80000] hover:text-white rounded-xs border hover:bg-[#a01000] transition-colors duration-300 mt-10 ${Hol.className} ${Hol.variable} text-[4vw] md:text-[1.5vh] font-bold`}>
             <span className="text-[#c80000]">*</span> ADD TO BASKET

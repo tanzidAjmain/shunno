@@ -139,7 +139,7 @@ const router = useRouter()
 
    </div> */}
 
-    <img src="/new-bg-soh.jpg" alt="loader" className="bg-soh absolute h-screen w-screen object-cover">
+    <img src="/new-bg-soh.jpg" alt="Abstract visual identity of Shunno O Oshim" className="bg-soh absolute h-screen w-screen object-cover">
     </img>
     </div>
 
@@ -150,7 +150,7 @@ const router = useRouter()
     <h1 className={`${Hol.className} ${Hol.variable} text-[#c80000] text-[20vw] ml-2`}>
       *
     </h1>
-    <img src="/bw-logo.jpg" alt="loader" className="logo pointer-events-none  absolute opacity-0 p-5 ">
+    <img src="/bw-logo.jpg" alt="Shunno O Oshim" className="logo pointer-events-none  absolute opacity-0 p-5 ">
     </img>
     </div>
 
@@ -178,6 +178,7 @@ const router = useRouter()
   
 
   <div className="flex mr-[5vw] flex-col items-center justify-center min-h-screen ">
+    <h1 className="sr-only">Shunno O Oshim — independent natural niche perfumes</h1>
     <div className="hero">
     
     </div>
@@ -195,9 +196,9 @@ const router = useRouter()
         ----------------------
         </h1> */}
 
-        <div onClick={nextPageHandler} >
-        <img className=" gardenNav ml-2 border  w-[12vw] md:w-[3.5vw] p-3  rounded-full  hover:border-[#c80000]  ease-in-out duration-300" src='/arrow-up-right.svg'/>
-        </div>
+        <button type="button" onClick={nextPageHandler} aria-label="Explore the perfume collection" className="ml-2">
+          <img className="gardenNav border w-[12vw] md:w-[3.5vw] p-3 rounded-full hover:border-[#c80000] ease-in-out duration-300" src='/arrow-up-right.svg' alt="" />
+        </button>
        </div>
 
     

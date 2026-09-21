@@ -20,7 +20,7 @@ export default function BottomMenu() {
     <div className="flex flex-col items-end leading-relaxed justify-center  text-black  px-1 py-4">
     <Link href="/garden">
     <div className='flex flex-row items-center justify-center'>
-      <img src='astb.svg'className='rotate-225 pr-1 w-[20px]'/>
+      <img src='/astb.svg' alt='' className='rotate-225 pr-1 w-[20px]'/>
       <h1 className="md:text-[1.1vw] text-justify hover:line-through decoration-[#c80000] p-1 text-[4vw] leading-none">
         GARDEN <span className="text-[#c80000] md:text-[1.2vw] text-[4vw]">*</span>
       </h1>

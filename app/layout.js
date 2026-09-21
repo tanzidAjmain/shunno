@@ -1,6 +1,7 @@
 import { Geist } from "next/font/google";
 // import { createContext } from "react";
 import { ProductProvider } from "./components/provider";
+import { brandName, siteDescription, siteUrl } from "./seo";
 
 
 
@@ -28,21 +29,66 @@ const geistSans = Geist({
 // })
 
 export const metadata = {
-  title: "Shunno /o/ Oshim",
-  description: "Official Store for Shunno /o/ Oshim",
-  keywords: "Shunno, Oshim, Art, perfume, fragrance, online store, unique art, limited edition, handmade, luxury, exclusive, creative, artistic expression",
+  metadataBase: new URL(siteUrl),
+  title: { default: `${brandName} | Natural Niche Perfumes`, template: `%s | ${brandName}` },
+  description: siteDescription,
+  applicationName: brandName,
+  keywords: ["Shunno O Oshim", "niche perfume", "natural perfume", "artisan fragrance", "oud perfume", "Bangladesh perfume"],
+  authors: [{ name: brandName }],
+  creator: brandName,
+  publisher: brandName,
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: brandName,
+    title: `${brandName} | Natural Niche Perfumes`,
+    description: siteDescription,
+    images: [{ url: "/shunno-o-ooshim.jpg", width: 1674, height: 910, alt: "Shunno O Oshim natural niche perfumes" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${brandName} | Natural Niche Perfumes`,
+    description: siteDescription,
+    images: ["/shunno-o-ooshim.jpg"],
+  },
+  icons: { icon: [{ url: "/logo.jpg", type: "image/jpeg" }], apple: [{ url: "/logo.jpg", type: "image/jpeg" }] },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <link rel="icon" href='/logo.jpg' type='image/jpg'  />
       <body
         className={`${geistSans.variable}   antialiased`}
         
         >
           {/* <ProductProvider> */}
             {children}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@graph": [
+                    {
+                      "@type": "Organization",
+                      name: brandName,
+                      url: siteUrl,
+                      logo: `${siteUrl}/logo.jpg`,
+                      description: siteDescription,
+                    },
+                    {
+                      "@type": "WebSite",
+                      name: brandName,
+                      url: siteUrl,
+                      description: siteDescription,
+                    },
+                  ],
+                }),
+              }}
+            />
           {/* </ProductProvider> */}
       </body>
       

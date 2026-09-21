@@ -86,22 +86,26 @@ gsap.ticker.lagSmoothing(0);
 
     <CartLogo />
 
-      <section className={` ${Hol.className} ${Hol.variable} flex flex-col  items-center  justify-center min-h-screen w-screen overflow-scroll mt-10 mb-40`}>
+      <section className={` ${Hol.className} ${Hol.variable} flex flex-col  items-center  justify-center min-h-screen  overflow-scroll mt-10 mb-40`}>
+        <h1 className="sr-only">The Garden — Shunno O Oshim natural niche perfume collection</h1>
         
         {
         
           products.map((product,i) => (
             <div key={`${product.id}-${i}`} className="prodList  flex xl:flex-row flex-col items-stretch justify-center mb-14  p-4 mt-40  w-[90vw] md:w-[50vw]">
-            <div className=" flex duration-300  flex-row items-center justify-center md:justify-start md:items-start ">
-              <h1 className='shadow-xl text-[#c80000]  md:text-[4vw] text-[7vw] absolute z-99  md:px-13 px-6.5 md:mt-[-10vh] md:ml-[-5vh] py-2.5 md:py-5 rounded-full '>{i+1}</h1>
-            </div>
+            {/* <div className=" flex duration-300  flex-row items-center justify-center md:justify-start md:items-start ">
+              <h1 className=' text-black md:text-[1vw] animate-spin text-[7vw] absolute -z-100  md:px-13 px-6.5 md:mt-[-10vh] md:ml-[-5vh] py-2.5 md:py-5 rounded-full '>Obscene Trilogy</h1>
+            </div> */}
 
               <Image src={`${product.image}`} alt={product.name} width={5000} height={200} className="w-full z-99 rounded-t-4xl md:rounded-4xl h-auto p-4" />
 
     
 
               <div className='flex flex-col ml-2 md:rounded-4xl rounded-b-4xl  items-start justify-center p-4'>
-              <h2 className=" text-[5vw] border-b whitespace-nowrap w-full md:text-[3vw] font-bold pb-5"><span className='text-[#c80000]'>*</span>{product.name}</h2>
+                <div className='flex flex-row border-b  items-center justify-between gap-2 mb-2'>
+                  <h2 className=" text-[5vw]  w-full min-w-[25vw] whitespace-nowrap md:text-[1.5vw] font-bold pb-5">{product.name}</h2>
+                  <span className='text-[#c80000] text-4xl'>*</span>
+                </div>
               <div className='flex flex-row w-full items-center justify-between gap-2 mb-2'>
                 <p className='text-black text-l'>MEMBER OF :</p>
                 <p>{product.series}</p>
@@ -139,7 +143,7 @@ gsap.ticker.lagSmoothing(0);
               / Date: <span className='text-[#c80000] font-bold'>{product.date}</span>  <br/>
                / Produced Qty: <span className='text-[#c80000] font-bold'>{product.qunatity}</span><br/>
                /<span className='text-[#c80000]'> {product.ml}ml</span> </p>
-              <p className="text-gray-700 box-content text-justify mb-4">{product.description}</p>
+              {/* <p className="text-gray-700 box-content text-justify mb-4">{product.description}</p> */}
              
              <div className='flex flex-row w-full justify-between items-center' >
               <p className="text-gray-900 font-bold ">BDT. {product.price}</p>
