@@ -3,7 +3,7 @@ import { siteUrl } from "../seo";
 export const metadata = {
   title: "The Garden | Natural Niche Perfumes",
   description:
-    "Explore The Garden by Shunno O Oshim: independent natural perfumes made with rare oud, animalic musk, and botanical extracts.",
+    "Explore The Garden of Shunno O Oshim: independent house with natural perfumes made with rare oud, animalic musk, and botanical extracts.",
   alternates: { canonical: "/garden" },
   openGraph: {
     title: "The Garden | Shunno O Oshim",

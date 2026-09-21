@@ -30,12 +30,13 @@ export default function ScratchersPage() {
         <h1 className="text-black text-[10vw] md:text-[3.5vw]">
             SCRATCHERS </h1>
         </div>
+        <h2 className="sr-only">Leave a comment, review, or feedback for Shunno O Oshim</h2>
       </div>
 
     <div className="flex flex-row w-full p-2 items-center justify-center mt-10">
-      <h1 onClick={()=>{setC(true);setF(false);setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1">LEAVE A COMMENT?</h1>
-      <h1 onClick={()=>{setR(true);setC(false); setF(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1">LEAVE A REVIEW?</h1>
-      <h1 onClick={()=>{setF(true);setC(false); setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1">LEAVE A FEEDBACK?</h1>
+      <button type="button" onClick={()=>{setC(true);setF(false);setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1">LEAVE A COMMENT?</button>
+      <button type="button" onClick={()=>{setR(true);setC(false); setF(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1">LEAVE A REVIEW?</button>
+      <button type="button" onClick={()=>{setF(true);setC(false); setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1">LEAVE A FEEDBACK?</button>
     </div>
 
     <div className="flex row w-full p-2 items-center justify-center mt-10">

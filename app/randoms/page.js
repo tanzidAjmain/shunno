@@ -23,7 +23,7 @@ export default function RandomPage(){
         </h1>
        </div>
        <div className="h-full flex-col justify-center items-center ">
-        <h1 className="text-gray-700 mb-10 ">ARCHIVE. of SHUNNO</h1>
+        <h2 className="text-gray-700 mb-10 ">ARCHIVE. of SHUNNO</h2>
         <p>NOTHING FOR NOW.</p>
         <BottomMenu/>
        </div>

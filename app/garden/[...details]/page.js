@@ -74,7 +74,7 @@ export default function GardenProductPage() {
 
     
       <div className='circle-border'>
-      <img src={productImage} alt={`${productName} niche perfume by Shunno O Oshim`} className="w-[85%] md:w-[95%] h-auto m-5 rounded-3xl line-through decoration-[#c80000] "/>
+      <img src={productImage} alt={`${productName} niche perfume by Shunno O Oshim`} width="1200" height="1200" className="w-[85%] md:w-[95%] h-auto m-5 rounded-3xl line-through decoration-[#c80000] "/>
         </div>
       {/* </div> */}
       </div>
@@ -86,9 +86,9 @@ export default function GardenProductPage() {
     </div>
     <span className="w-[85%] flex flex-col md:flex-row items-center justify-center m-auto">
       <div className="h-[65%] items-start">
-        <h1 className={`text-2xl p-5 font-bold ${Hol.className} ${Hol.variable} text-black`}>
+        <h2 className={`text-2xl p-5 font-bold ${Hol.className} ${Hol.variable} text-black`}>
           THE THOUGHT BEHIND:
-        </h1>
+        </h2>
       <p className={`w-[85%] mt-10 p-4 box-content bg-white  flex md:flex-row flex-col items-center justify-around ${Hol.className} ${Hol.variable} text-black text-justify `}>
       {productDescription}
       </p>
@@ -96,7 +96,7 @@ export default function GardenProductPage() {
     
 
       </div>
-      {productNoteDiagram && <img src={productNoteDiagram} alt={`Scent note diagram for ${productName}`} className="w-[85%] mt-2 p-4 bg-white flex md:flex-row md:w-[35%] flex-col items-center justify-around line-through decoration-[#c80000]" />}
+      {productNoteDiagram && <img src={productNoteDiagram} alt={`Scent note diagram for ${productName}`} width="1200" height="1200" className="w-[85%] mt-2 p-4 bg-white flex md:flex-row md:w-[35%] flex-col items-center justify-around line-through decoration-[#c80000]" />}
     </span>
     <div className="w-screen flex items-center justify-center mb-6">
       {

@@ -124,6 +124,7 @@ export default function CheckoutPage() {
         <>
 
     <div className={`${Hol.className} ${Hol.variable} flex flex-col items-center justify-center w-full h-full]`}>
+      <h2 className="sr-only">Order and delivery details</h2>
      
     
     
@@ -133,7 +134,7 @@ export default function CheckoutPage() {
     
     <div className="flex flex-row items-center justify-start w-full max-w-md">
     <div className="my-4  flex justify-between w-full items-center">
-    <img className="w-32 h-32 border-l-2 border-[#c80000] object-contain" src="/logo.jpg" alt="logo" />
+    <img className="w-32 h-32 border-l-2 border-[#c80000] object-contain" src="/logo.jpg" alt="Shunno O Oshim" width="732" height="546" />
     <div className="flex flex-row justify-center items-center">
     <h1 className="text-5xl mt-2  font-bold text-[#c80000]">*</h1>
     <h1 className="text-xl p-3 font-bold">CHECKOUT</h1>

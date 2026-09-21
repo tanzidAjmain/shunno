@@ -88,6 +88,7 @@ gsap.ticker.lagSmoothing(0);
 
       <section className={` ${Hol.className} ${Hol.variable} flex flex-col  items-center  justify-center min-h-screen  overflow-scroll mt-10 mb-40`}>
         <h1 className="sr-only">The Garden — Shunno O Oshim natural niche perfume collection</h1>
+        <h2 className="sr-only">Available natural perfumes and their stories</h2>
         
         {
         
@@ -98,6 +99,7 @@ gsap.ticker.lagSmoothing(0);
             </div> */}
 
               <Image src={`${product.image}`} alt={product.name} width={5000} height={200} className="w-full z-99 rounded-t-4xl md:rounded-4xl h-auto p-4" />
+              
 
     
 
@@ -119,8 +121,8 @@ gsap.ticker.lagSmoothing(0);
                   }) 
                 }}  href={`/garden/${product.name}/${product.id}/${product.price}/${product.archive}`} className='w-full'>
                 <div className='flex mb-2 flex-row items-center justify-between  p-1 cursor-pointer rounded-4xl'>
-                <h1 className=' hover:line-through decoration-[#c80000]'>* THE STORY</h1>
-                  <img src='/arrow-up-right.svg' alt='arrow' className='motion w-[5vw] md:w-[2vw] m-2 border-2  rounded-full hover:rotate-45 hover:border-[#c80000] z-[-100000] ease-in-out duration-300 ' />
+                <p className='hover:line-through decoration-[#c80000]'>* THE STORY</p>
+                  <img src='/arrow-up-right.svg' alt='' width="24" height="24" className='motion w-[5vw] md:w-[2vw] m-2 border-2 rounded-full hover:rotate-45 hover:border-[#c80000] z-[-100000] ease-in-out duration-300' />
                 </div>
                 </Link>
 

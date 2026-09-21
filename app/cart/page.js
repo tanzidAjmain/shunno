@@ -24,6 +24,7 @@ useEffect(() => {
   return (
     
     <div className={`${Hol.className} ${Hol.variable}`}>
+    <h2 className="sr-only">Selected niche perfumes</h2>
     {
         cart.length === 0 ?
          <div className='flex flex-col items-center w-screen h-screen justify-center mt-4 m-2 inset-0 text-black '>
@@ -43,7 +44,7 @@ useEffect(() => {
               <h1 className='text-[#c80000] p-2 border rounded-full'>{index+1}</h1>
             </div>
             <div className='flex flex-row border-l items-center'>
-            <img src={item.image} alt={item.name} className='w-45 h-45 object-cover rounded-full mr-4' />
+            <img src={item.image} alt={`${item.name} perfume`} width="180" height="180" className='w-45 h-45 object-cover rounded-full mr-4' />
             <div className='flex flex-col items-start justify-center h-full'>
               <h2 className='text-lg whitespace-nowrap font-bold'>{item.name}</h2>
               <p className='text-gray-600'>Price: BDT. {item.price}</p>
@@ -103,7 +104,7 @@ useEffect(() => {
                 });
               }}
               className={`px-4  mx-2 py-3 m-1 text-[#c80000] whitespace-nowrap hover:text-white rounded-full border hover:bg-[#a01000] transition-colors duration-300  ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.75vh] font-bold`}>
-                      <img src='/arrow-up-right.svg' className='-rotate-135 '/>
+                      <img src='/arrow-up-right.svg' alt='Continue shopping' width="24" height="24" className='-rotate-135 '/>
              </button>
              </div>
       </div>

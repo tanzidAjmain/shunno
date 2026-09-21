@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import  * as textSplitter from 'gsap/SplitText'
 
 
@@ -41,7 +42,7 @@ const router = useRouter()
       duration: 2,
       ease: "power3.out",
       onUpdate: () => {
-        const el = document.querySelector(".loader h1");
+        const el = document.querySelector(".loader-counter");
         if (el) el.textContent = counter.val.toFixed(0).padStart(2, "0");
       },
     });
@@ -139,18 +140,18 @@ const router = useRouter()
 
    </div> */}
 
-    <img src="/new-bg-soh.jpg" alt="Abstract visual identity of Shunno O Oshim" className="bg-soh absolute h-screen w-screen object-cover">
+    <img src="/new-bg-soh.jpg" alt="Abstract visual identity of Shunno O Oshim" width="1720" height="880" className="bg-soh absolute h-screen w-screen object-cover">
     </img>
     </div>
 
     <div className='loader pointer-events-none w-screen h-screen fixed object-cover inset-0 flex flex-row items-center  justify-center md:text-[10vh] text-[30vw] px-5  z-99999 bg-black overflow-hidden '>
-    <h1 className="text-white">
+    <p className="loader-counter text-6xl md:text-8xl text-white">
       00
-    </h1>
-    <h1 className={`${Hol.className} ${Hol.variable} text-[#c80000] text-[20vw] ml-2`}>
+    </p>
+    <p className={`${Hol.className} ${Hol.variable} text-[#c80000] text-[10vw] md:text-[5vw] ml-2`}>
       *
-    </h1>
-    <img src="/bw-logo.jpg" alt="Shunno O Oshim" className="logo pointer-events-none  absolute opacity-0 p-5 ">
+    </p>
+    <img src="/bw-logo.jpg" alt="Shunno O Oshim" width="222" height="246" className="logo pointer-events-none  absolute opacity-0 p-5 ">
     </img>
     </div>
 
@@ -161,14 +162,14 @@ const router = useRouter()
       <div  className="header  fixed z-10 flex flex-col justify-start px-5 py-3 min-w-screen ">
         <div className='max-w-60'>
 
-        <h1 className="headerText md:text-[1vw]  text-[3vw]  font-">
+        <p className="headerText md:text-[1vw]  text-[3vw]  font-">
          A GARDEN THAT <span className="italic">DIED</span> 
-        </h1>
+        </p>
         <div className='flex flex-row items-center justify-start'>
 
-        <h1 className="headerText md:text-[1vw] text-[3vw] font-stretch-200% ">
+        <p className="headerText md:text-[1vw] text-[3vw] font-stretch-200% ">
           A   LONG  TIME   AGO. 
-        </h1>
+        </p>
         <span className="animate-pulse text-2xl text-[#c80000] px-2">*</span>
         {/* <div className='liner w-0 h-px bg-[#c80000]'></div> */}
         </div>
@@ -179,26 +180,27 @@ const router = useRouter()
 
   <div className="flex mr-[5vw] flex-col items-center justify-center min-h-screen ">
     <h1 className="sr-only">Shunno O Oshim — independent natural niche perfumes</h1>
+    <h2 className="sr-only">Explore The Garden, our collection of natural artisan fragrances</h2>
     <div className="hero">
     
     </div>
       <div className="entry opacity-0 w-full z-4 pb-6 flex flex-row place-items-end justify-center min-h-screen min-w-screen">
         <div className="flex flex-row  justify-end items-end min-w-screen  ">
        <div>
-        <h1>
+        <p>
           ENTER 
-        </h1>
-        <h1  className={`${Hol.className} ${Hol.variable}  flex flex-row   text-black md:text-[1.1vw]  text-[3.5vw] font-bold hover:animate-pulse pointer  transition-all duration-300 ease-in-out  `}>
-         THE <p className=" pl-1  "> GARDEN .</p>
-        </h1>
+        </p>
+        <p className={`${Hol.className} ${Hol.variable} flex flex-row text-black md:text-[1.1vw] text-[3.5vw] font-bold hover:animate-pulse pointer transition-all duration-300 ease-in-out`}>
+         THE <span className="pl-1"> GARDEN .</span>
+        </p>
        </div>
         {/* <h1 className={`${Hol.className} ${Hol.variable} py-4 text-black md:text-[1.5vw]  text-[5vw] font-bold  `}>
         ----------------------
         </h1> */}
 
-        <button type="button" onClick={nextPageHandler} aria-label="Explore the perfume collection" className="ml-2">
-          <img className="gardenNav border w-[12vw] md:w-[3.5vw] p-3 rounded-full hover:border-[#c80000] ease-in-out duration-300" src='/arrow-up-right.svg' alt="" />
-        </button>
+        <Link href="/garden" onClick={(event) => { event.preventDefault(); nextPageHandler(); }} aria-label="Explore the perfume collection" className="ml-2">
+          <img width="24" height="24" className="gardenNav border w-[12vw] md:w-[3.5vw] p-3 rounded-full hover:border-[#c80000] ease-in-out duration-300" src='/arrow-up-right.svg' alt="" />
+        </Link>
        </div>
 
     

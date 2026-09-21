@@ -20,7 +20,7 @@ export default function CartLogo() {
         
             <div className=" bg-white top-0 flex flex-row items-center fixed  w-screen justify-between text-white">
               <Link href='/garden'>
-              <Image src="/logo.jpg" alt="logo" width={100} height={150}></Image>
+              <Image src="/logo.jpg" alt="Shunno O Oshim" width={100} height={150}></Image>
               </Link>
               <div>
                 {/* <h1 className={`${Hol.className} ${Hol.variable} md:text-[1.5vw] text-[4vw] text-black`}> Garden </h1> */}
@@ -30,14 +30,14 @@ export default function CartLogo() {
                 
                
                 <div className="flex flex-row items-center justify-center">
-                <h1 className={`${Hol.className} ${Hol.variable} md:text-[1.5vw] text-[5vw] px-2 py-0 bg-[#c80000] text-white rounded-full`}>{useStore(s=>s.items)}</h1>
+                <span className={`${Hol.className} ${Hol.variable} md:text-[1.5vw] text-[5vw] px-2 py-0 bg-[#c80000] text-white rounded-full`}>{useStore(s=>s.items)}</span>
                 <Link  href="/cart" className="pointer-events-auto">
                 <div className="flex flex-row items-center justify-center border rounded-full p-1 mx-3">
-                <img src='/astb.svg' alt='box' className=' h-[3vh] m-2 '>
+                <img src='/astb.svg' alt='Shopping basket' width="24" height="24" className='h-[3vh] m-2'>
                 </img>
                 { useStore(s=>s.items) > 0 ? (
                 <div className="flex flex-row items-center justify-center ">
-                <h1 className={`${Hol.className} ${Hol.variable} text-black  md:text-[1.1vw] text-[4vw] px-2 py-0 rounded-full`}>CART</h1>
+                <span className={`${Hol.className} ${Hol.variable} text-black md:text-[1.1vw] text-[4vw] px-2 py-0 rounded-full`}>CART</span>
                 <div className="bg-[#c80000] h-2 w-2 rounded full animate-pulse m-2"></div>
                 </div>
                 ) : null }

@@ -83,7 +83,7 @@ export default function ManifestoPage() {
     
 
     <div className="flex w-full min-h-screen flex-col items-center justify-center">
-      <img src="/logo.jpg" className="manImage fixed "/>
+      <img src="/logo.jpg" alt="Shunno O Oshim" width="732" height="546" className="manImage fixed "/>
       {/* <div className="flex flex-row w-full items-center justify-center">
       <h1 className="secondText text-black text-[4vw] md:text-[2vw] whitespace-nowrap">HOW <span className="text-[#c80000] px-10">SHUNNO/O/OSHIM </span>
     CAME TO EXISTENCE </h1>
@@ -99,18 +99,18 @@ export default function ManifestoPage() {
    
       <section className="heroSection mb-50 flex w-full min-h-screen flex-col items-center justify-center">
         <div className="flex flex-col items-center text-left  justify-center m-4 w-[70vw] md:w-[60vw] h-full">
-        <p className="heroText text-2.5xl border-b">THE ORIGIN</p>
-        <h1 className="md:text-[2vw] text-[3vw] box-content text-justify  my-4 heroText ">
+        <h2 className="heroText text-2.5xl border-b">THE ORIGIN</h2>
+        <p className="md:text-[2vw] text-[3vw] box-content text-justify my-4 heroText">
         Before there was form, there was breath, there was scent, raw and sacred.
         At shunno/o/oshim, we view scent not as a cosmetic enhancer rather as an substantial truth, something to be felt, something that carves something in the void of human soul. A bridge it is, spanning the total emptiness Shunno[zero] from which we emerge and the boundless cosmos Oshim[infinite] to which we return.
-        </h1>
+        </p>
         </div>
         <div className="flex flex-col items-center text-left  justify-center m-4 w-[70vw] md:w-[60vw] h-full">
 
-        <p className="heroText text-2.5xl border-b">THE BlOOD OF THE EARTH</p>
-        <h1 className="md:text-[2vw] text-[3vw] box-content text-justify  my-4 heroText  ">
+        <h2 className="heroText text-2.5xl border-b">THE BLOOD OF THE EARTH</h2>
+        <p className="md:text-[2vw] text-[3vw] box-content text-justify my-4 heroText">
         We take pride in crafting strictly with 100% natural, uncompromised raw materials. Rare wild ouds, raw animalic musks, and botanical extracts form our palette. These are not approximations, they are living, breathing extractions harvested from the earth and for the earthlings. 
-        </h1>
+        </p>
         </div>
       </section>
       <BottomMenu/>

@@ -18,39 +18,40 @@ export default function BottomMenu() {
     className={`${Hol.className} ${Hol.variable}  fixed bottom-4 right-1 md:bottom-3 md:right-1 z-100  overflow-auto`}
   >
     <div className="flex flex-col items-end leading-relaxed justify-center  text-black  px-1 py-4">
+   
     <Link href="/garden">
     <div className='flex flex-row items-center justify-center'>
-      <img src='/astb.svg' alt='' className='rotate-225 pr-1 w-[20px]'/>
-      <h1 className="md:text-[1.1vw] text-justify hover:line-through decoration-[#c80000] p-1 text-[4vw] leading-none">
+      <img src='/astb.svg' alt='' width="24" height="24" className='rotate-225 pr-1 w-[20px]'/>
+      <h2 className="md:text-[1.1vw] text-justify hover:line-through decoration-[#c80000] p-1 text-[4vw] leading-none">
         GARDEN <span className="text-[#c80000] md:text-[1.2vw] text-[4vw]">*</span>
-      </h1>
+      </h2>
     </div>
     </Link>
     <Link href="/Manifesto">
-      <h1 className="md:text-[1.1vw] text-justify hover:line-through decoration-[#c80000] duration-1000 p-1 text-[4vw] leading-none">
+      <h2 className="md:text-[1.1vw] text-justify hover:line-through decoration-[#c80000] duration-1000 p-1 text-[4vw] leading-none">
          MANIFESTO <span className="text-[#c80000] md:text-[1.2vw] text-[4vw]">*</span>
-      </h1>
+      </h2>
     </Link>
 
     <Link href="/randoms">
-      <h1 className="md:text-[1.1vw] text-justify hover:line-through decoration-[#c80000] p-1 text-[4vw]  leading-none">
+      <h2 className="md:text-[1.1vw] text-justify hover:line-through decoration-[#c80000] p-1 text-[4vw]  leading-none">
         RANDOMS <span className="text-[#c80000] md:text-[1.2vw] text-[4vw]">*</span>
-      </h1>
+      </h2>
     </Link>
 
     <Link href="/Scratchers">
-      <h1 className="md:text-[1.1vw] text-justify hover:line-through decoration-[#c80000] p-1 text-[4vw]  leading-none">
+      <h2 className="md:text-[1.1vw] text-justify hover:line-through decoration-[#c80000] p-1 text-[4vw]  leading-none">
         SCRATCHERS <span className="text-[#c80000] md:text-[1.2vw] text-[4vw]">*</span>
-      </h1>
+      </h2>
     </Link> 
     <Link href="/policy">
-      <h1 className="md:text-[1.1vw] hover:line-through decoration-[#c80000] p-1 text-[4vw]  leading-none">
+      <h2 className="md:text-[1.1vw] hover:line-through decoration-[#c80000] p-1 text-[4vw]  leading-none">
       CONDITIONS <span className="text-[#c80000] md:text-[1.2vw] text-[4vw]">*</span>
-      </h1>
+      </h2>
     </Link> 
-    <h1 className="md:text-[1vw] text-bold border-l border-[#c80000] pl-2 mt-2 text-[2vw] leading-none">
+    <p className="md:text-[1vw] text-bold border-l border-[#c80000] pl-2 mt-2 text-[2vw] leading-none">
         C.2026.SHUNNO.O.OSHIM.
-      </h1>
+      </p>
     </div>
     </div>
       </>
