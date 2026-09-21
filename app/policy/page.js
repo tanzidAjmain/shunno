@@ -95,7 +95,7 @@ export default function policyPage(){
         <h2>VIOLATION OF RULES <span className={`${Hol.className} text-[#c80000]`}>*</span></h2>
         </div>
         
-        <div className={`${IBM.className}  flex w-full  justify-center`}>
+        <div className={`${IBM.className}  flex w-full mb-50 justify-center`}>
         <p className="text-justify w-[70vw] p-05 mt-10 text-[4vw] md:text-3xl" >
             SHUNNO /O/ OSHIM reserves the right to seek remedies of law and blockade of your access to SHUNNO /O/ OSHIM if your violation of these terms and conditons could be seen.
         </p>
