@@ -104,8 +104,8 @@ gsap.ticker.lagSmoothing(0);
     
 
               <div className='flex flex-col ml-2 md:rounded-4xl rounded-b-4xl  items-start justify-center p-4'>
-                <div className='flex flex-row border-b  items-center justify-between gap-2 mb-2'>
-                  <h2 className=" text-[5vw]  w-full min-w-[25vw] whitespace-nowrap md:text-[1.5vw] font-bold pb-5">{product.name}</h2>
+                <div className='flex flex-row border-b w-full  min-w-[25vw] items-center justify-between gap-2 mb-2'>
+                  <h2 className=" text-[5vw]  w-full whitespace-nowrap md:text-[1.5vw] font-bold pb-5">{product.name}</h2>
                   <span className='text-[#c80000] text-4xl'>*</span>
                 </div>
               <div className='flex flex-row w-full items-center justify-between gap-2 mb-2'>
