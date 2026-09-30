@@ -30,7 +30,7 @@ export default function GardenPage() {
   const setImg = useStore(s=> s.setDetimage);
   const setDesctn = useStore(s=> s.setDesc);
   const setNoteDiagraph = useStore(s=> s.setNoteDiagraph);
-
+  const setMoreImages = useStore(s=> s.moreImages);
 
 useEffect(() => {
 
@@ -116,6 +116,7 @@ gsap.ticker.lagSmoothing(0);
                   setImg(product.image);
                   setDesctn(product.description);
                   setNoteDiagraph(product.notediagraph);
+                  setMoreImages(product.moreImages);
                   gsap.to('.motion', {
                     rotation: 360,
                   }) 
@@ -143,7 +144,7 @@ gsap.ticker.lagSmoothing(0);
                
               <p className='pb-2 border-y  '>/ Organic Percentage : <span className='text-[#c80000] font-bold'>{product.organicPercentage}</span>  <br/> 
               / Date: <span className='text-[#c80000] font-bold'>{product.date}</span>  <br/>
-               / Produced Qty: <span className='text-[#c80000] font-bold'>{product.qunatity}</span><br/>
+               / Produced Qty: <span className='text-[#c80000] font-bold'> 0{product.quantity} </span> <br/>
                /<span className='text-[#c80000]'> {product.ml}ml</span> </p>
               {/* <p className="text-gray-700 box-content text-justify mb-4">{product.description}</p> */}
              
