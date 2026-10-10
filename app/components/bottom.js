@@ -57,7 +57,7 @@ export default function BottomMenu() {
   
     </div>
     <div className='w-full flex flex-row items-center justify-start'>
-    <p className="md:text-[.7vw] text-bold border-l border-[#c80000]  pl-2 mt-2 text-[2vw] leading-none">
+    <p className="md:text-[.7vw] text-bold border-l border-[#c80000]  px-2 mx-2  text-[2vw] leading-none">
         C.2026.SHUNNO.O.OSHIM.
       </p>
     </div>

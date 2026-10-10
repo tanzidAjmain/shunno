@@ -34,12 +34,12 @@ export default function ScratchersPage() {
       </div>
 
     <div className="flex flex-row w-full p-2 items-center justify-center mt-10">
-      <button type="button" onClick={()=>{setC(true);setF(false);setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1">LEAVE A COMMENT?</button>
-      <button type="button" onClick={()=>{setR(true);setC(false); setF(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1">LEAVE A REVIEW?</button>
-      <button type="button" onClick={()=>{setF(true);setC(false); setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1">LEAVE A FEEDBACK?</button>
+      <button type="button" onClick={()=>{setC(true);setF(false);setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 text-xs rounded-2xl p-2 m-1 ">LEAVE A COMMENT?</button>
+      <button type="button" onClick={()=>{setR(true);setC(false); setF(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 text-xs rounded-2xl p-2 m-1">LEAVE A REVIEW?</button>
+      <button type="button" onClick={()=>{setF(true);setC(false); setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 text-xs rounded-2xl p-2 m-1">LEAVE A FEEDBACK?</button>
     </div>
 
-    <div className="flex row w-full p-2 items-center justify-center mt-10">
+    <div className="flex row w-full p-2 items-center justify-center mt-10 ">
     {
       c?
       <>
@@ -92,7 +92,7 @@ export default function ScratchersPage() {
 
     }}
     disabled={load || collected}
-    className={`border w-[75vw] md:w-[45vw] cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 m-1`}>{load?"****":<span>SEND</span>}</button>
+    className={`border w-[75vw] md:w-[45vw] cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 rounded-2xl p-2 mb-50 `}>{load?"****":<span>SEND</span>}</button>
     </div>
     </>:<></>
   }

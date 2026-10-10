@@ -27,13 +27,13 @@ useEffect(() => {
     <h2 className="sr-only">Selected niche perfumes</h2>
     {
         cart.length === 0 ?
-         <div className='flex flex-col items-center w-screen h-screen justify-center mt-4 m-2 inset-0 text-black '>
+         <div className='flex flex-col items-center w-full min-h-screen overflow-x-hidden justify-center mt-4 m-2 inset-0 text-black '>
             <h1>BASKET IS EMPTY !</h1>
             <p>such a bad taste.. :( blehh </p>
               {/* <img src='/cat2.png' alt='cat' className='w-30 h-30 object-cover  mr-4' /> */}
         </div>
      : <>
-     <div className='flex flex-col items-center w-screen justify-center mt-4 m-2 inset-0 text-black '>
+     <div className='flex flex-col items-center w-full overflow-x-hidden justify-center mt-4 m-2 inset-0 text-black '>
               <h1 className='text-[7vw] md:text-[4vw] m-2'>BASKET <span className='text-[#c80000]'>*</span></h1>
               {/* <p>some good choice(s)</p> */}
       </div>
@@ -64,8 +64,8 @@ useEffect(() => {
               <div className='flex flex-row justify-center h-full items-center'>
 
               <h1 className='text-[4vw] md:text-[1vw] m-5'>Subtotal: {cart.reduce((acc, item) => acc + item.price * item.amount, 0)} </h1>
-              <div className='pt-2'>
-              <h1 className=' aster text-[#c80000]  text-2xl'>*</h1>
+              <div className=''>
+              <h1 className=' aster text-[#c80000] m-5 text-2xl'>*</h1>
               </div>
               </div>
               {/* <div className=' border w-[50vw]'></div> */}

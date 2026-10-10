@@ -129,7 +129,7 @@ const router = useRouter()
 
     
 
-<div className='text-clip pointer-events-none flex flex-row items-center overflow-hidden justify-center md:text-[10vh] text-[30vw] px-5 h-screen w-screen fixed z-999 bg-white '>
+<div className='text-clip pointer-events-none flex flex-row items-center overflow-hidden justify-center md:text-[10vh] text-[30vw] px-5 h-full  w-full fixed z-999 bg-white '>
    
    {/* <div className='second-loader w-full h-full absolute bg-black top-300 left-0 pointer-events-none  z-999999997 '>
 
@@ -189,7 +189,7 @@ const router = useRouter()
     <h1 className="sr-only">Shunno O Oshim — independent natural niche perfumes</h1>
     <h2 className="sr-only">Explore The Garden, our collection of natural artisan fragrances</h2>
 
-      <div className="entry opacity-0 w-full z-4 flex flex-col justify-end min-h-screen">
+      <div className="entry fixed bottom-3 opacity-0 w-full z-4 flex flex-col justify-end min-h-screen">
         <div className="flex flex-row  justify-between items-center w-full p-6">
      <div>
         <p className={`${Hol.className} ${Hol.variable} flex flex-row text-black md:text-[1vw] text-[3vw] `}>
