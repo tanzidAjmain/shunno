@@ -12,7 +12,7 @@ import ReceivedPage from "../components/received";
 
 
 export const Hol = localFont({
-    src: '../fonts/holstein.ttf', 
+    src: '../fonts/myst.otf', 
      variable: '--font-hol',
   });
 
@@ -134,10 +134,12 @@ export default function CheckoutPage() {
     
     <div className="flex flex-row items-center justify-start w-full max-w-md">
     <div className="my-4  flex justify-between w-full items-center">
-    <img className="w-32 h-32 border-l-2 border-[#c80000] object-contain" src="/logo.jpg" alt="Shunno O Oshim" width="732" height="546" />
-    <div className="flex flex-row justify-center items-center">
-    <h1 className="text-5xl mt-2  font-bold text-[#c80000]">*</h1>
-    <h1 className="text-xl p-3 font-bold">CHECKOUT</h1>
+      <div className="w-20 h-20 border-l-2 border-[#c80000]">
+      </div>
+    {/* <img className="w-20 h-20 border-l-2 border-[#c80000] object-contain" src="/logo.jpg" alt="Shunno O Oshim" width="732" height="546" /> */}
+    <div className="flex   flex-row justify-center items-center">
+    <h1 className="text-3xl p-2 font-bold text-[#c80000]">*</h1>
+    <h1 className="text-xl p-3 font-bold">Checkout</h1>
     </div>
     </div>
     </div>  
@@ -171,7 +173,7 @@ export default function CheckoutPage() {
       <div>{wrongInfo && <p className="text-red-500">* Please provide valid information</p>}</div>
       <div>{apiError && <p className="text-red-500">* Order email failed: {apiError}</p>}</div>
       <div className="border-b mb-4">
-      <h1 className="text-black text-s mt-5 mb-5"> * IF YOU'RE MANUALLY PUTTING IN THE INFOS, PLEASE MAKE SURE TO WRITE THE FIRST LETTER IN CAPS</h1>
+      <h1 className="text-black text-[.9rem] mt-5 mb-5"> * If you're putting the info(s) manually please make sure to write the first letter in caps .</h1>
       <label className={`block my-2 mx-1  text-sm`}>NAME<span className="text-[#c80000]"> //</span></label>
       <input type="text" required  onChange={(e) => setName(e.target.value)}  className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c80000]" />
       </div>

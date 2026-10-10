@@ -6,7 +6,7 @@ export const useStore = create((set) => ({
     detImage:"",
     desc:"",
     noteDiagraph:"",
-    moreImages:[],
+    albumImages:[],
     increase: (payload = {}) =>
       set((state) => {
         // cart: [...state.cart, payload],
@@ -26,7 +26,7 @@ export const useStore = create((set) => ({
       setDetimage: (image) => set({ detImage: image }),
       setDesc: (description) => set({ desc: description }),
       setNoteDiagraph: (diagraph) => set({ noteDiagraph: diagraph }),
-      moreImages: (images) => set({ moreImages: images }),
+      setMoreImages: (images) => set({ albumImages: images }),
       removeItem:(id) => 
         set((state) => {
             const itemToRemove = state.cart.find(item => item.id === id);

@@ -11,7 +11,7 @@ import { DataProv } from '../../components/provider';
 
 
   export const Hol = localFont({
-    src: '../../fonts/holstein.ttf', 
+    src: '../../fonts/myst.otf', 
      variable: '--font-hol',
   });
   
@@ -71,7 +71,7 @@ export default function GardenProductPage() {
     <div className={`w-screen  min-h-screen p-5 bg-white mb-40 md:mb-0 flex md:flex-row flex-col items-center justify-around  ${Hol.className} ${Hol.variable} `}>
       <div className="flex flex-row items-center justify-start w-full my-9">
        <h1 className="text-2xl p-5 font-bold">
-        Story Behind : <br/><span className="line-through text-[8vw]  md:text-[4vw] decoration-[#c80000]">{productName}</span> 
+        Story Behind : <br/><span className=" text-3xl whitespace-pre-wrap md:text-[4vw] ">{productName}</span> 
         {/* <span className='mt-4 text-4xl'>↝</span> */}
        </h1><br/>
       </div>
@@ -88,9 +88,9 @@ export default function GardenProductPage() {
 
     {productMoreImages.length > 0 && (
       <div>
-      <div className="relative shadow-xl  rounded-2xl px-2 py-6  mx-auto my-5 flex flex-col w-full max-w-3xl items-center justify-center">
+      <div className="relative shadow-xl  rounded-2xl px-2 py-6  mx-auto my-5 flex flex-col w-full max-w-3xl tracking-wider items-center justify-center">
       <div className='w-full px-5 flex items-center justify-between flex-row'>
-      <h1 className={`text-2xl  py-10  font-bold ${Hol.className} ${Hol.variable}`}>ALBUM:</h1>
+      <h1 className={`text-2xl  py-10  font-bold ${Hol.className} ${Hol.variable}`}>album:</h1>
       <p className={`text-3xl py-10 font-bold ${Hol.className} ${Hol.variable} text-[#c80000]`}>*</p>
       </div>
       <div className='flex flex-col w-full items-center justify-around gap-2'>
@@ -107,7 +107,7 @@ export default function GardenProductPage() {
           aria-label="Previous image"
           className=" left-3 z-10 rounded-full  bg-white border px-4 py-3 text-2xl  shadow"
           >
-          ←
+          <img src="/astb.svg" alt="Previous" />
         </button>
 
         <button
@@ -116,7 +116,7 @@ export default function GardenProductPage() {
           aria-label="Next image"
           className=" right-3 z-10 rounded-full bg-white border px-4 py-3  text-2xl shadow"
           >
-          →
+          <img src="/astb.svg" alt="Next" />
         </button>
         </div>
         </div>

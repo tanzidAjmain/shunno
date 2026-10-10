@@ -4,7 +4,7 @@ import BottomMenu from "../components/bottom";
 import { DataProv } from "../components/provider";
 
   export const Hol = localFont({
-    src: '../fonts/holstein.ttf', 
+    src: '../fonts/myst.otf', 
      variable: '--font-hol',
   });
   
@@ -12,7 +12,7 @@ import { DataProv } from "../components/provider";
 
 export default function RandomPage(){
 
-  const products = DataProv()
+  // const products = DataProv()
   
 
     return(
@@ -22,11 +22,11 @@ export default function RandomPage(){
             <span className="text-5xl text-[#c80000]">*</span>Randoms
         </h1>
        </div>
-       <div className="h-full flex-col justify-center items-center ">
+       <div className="h-full flex flex-col justify-center items-center ">
         <h2 className="text-gray-700 mb-10 ">ARCHIVE. of SHUNNO</h2>
-        <p>NOTHING FOR NOW.</p>
-        <BottomMenu/>
+        <p className="text-xs"> [ NOTHING FOR NOW ]</p>
        </div>
+        <BottomMenu/>
        </div>
     )
 }

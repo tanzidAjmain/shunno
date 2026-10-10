@@ -1,6 +1,6 @@
 'use client'
 import localFont from 'next/font/local';
-import { use, useEffect } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,7 +12,7 @@ import { useStore } from '../components/zustand';
 import { DataProv } from '../components/provider';
 
 export const Hol = localFont({
-  src: '../fonts/holstein.ttf', 
+  src: '../fonts/myst.otf', 
    variable: '--font-hol',
 });
 
@@ -30,7 +30,7 @@ export default function GardenPage() {
   const setImg = useStore(s=> s.setDetimage);
   const setDesctn = useStore(s=> s.setDesc);
   const setNoteDiagraph = useStore(s=> s.setNoteDiagraph);
-  const setMoreImages = useStore(s=> s.moreImages);
+  const setMoreImages = useStore(s=> s.setMoreImages);
 
 useEffect(() => {
 
@@ -60,7 +60,7 @@ gsap.ticker.lagSmoothing(0);
 
     const tl = gsap.timeline();
     tl.to('.motion', {
-    delay:5,
+    delay:15,
     rotateY: 360,
     loop: 5,
     duration: 1.5,
@@ -106,7 +106,7 @@ gsap.ticker.lagSmoothing(0);
               <div className='flex flex-col ml-2 md:rounded-4xl rounded-b-4xl  items-start justify-center p-4'>
                 <div className='flex flex-row border-b w-full  min-w-[25vw] items-center justify-between gap-2 mb-2'>
                   <h2 className=" text-[5vw]  w-full whitespace-nowrap md:text-[1.5vw] font-bold pb-5">{product.name}</h2>
-                  <span className='text-[#c80000] text-4xl'>*</span>
+                  <span className='text-[#c80000] pb-6 text-4xl'>*</span>
                 </div>
               <div className='flex flex-row w-full items-center justify-between gap-2 mb-2'>
                 <p className='text-black text-l'>MEMBER OF :</p>
@@ -123,7 +123,7 @@ gsap.ticker.lagSmoothing(0);
                 }}  href={`/garden/${product.name}/${product.id}/${product.price}/${product.archive}`} className='w-full'>
                 <div className='flex mb-2 flex-row items-center justify-between  p-1 cursor-pointer rounded-4xl'>
                 <p className='hover:line-through decoration-[#c80000]'>* THE STORY</p>
-                  <img src='/arrow-up-right.svg' alt='' width="24" height="24" className='motion w-[5vw] md:w-[2vw] m-2 border-2 rounded-full hover:rotate-45 hover:border-[#c80000] z-[-100000] ease-in-out duration-300' />
+                  <img src='/arrow-up-right.svg' alt='' width="24" height="24" className='motion w-[5vw] md:w-[2vw] m-2 border rounded-full hover:rotate-45 hover:border-[#c80000] animate-pulse ease-in-out duration-300' />
                 </div>
                 </Link>
 

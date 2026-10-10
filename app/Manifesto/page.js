@@ -16,7 +16,7 @@ const IBM = IBM_Plex_Mono({
 
 
 export const Hol = localFont({
-  src: '../fonts/holstein.ttf', 
+  src: '../fonts/myst.otf', 
    variable: '--font-hol',
 });
 
@@ -78,7 +78,7 @@ export default function ManifestoPage() {
   }, []);
 
   return (
-    <div className={`w-full h-full  ${IBM.variable} ${IBM.className} flex-col`}>
+    <div className={`w-full h-full  ${Hol.variable} ${Hol.className} flex-col  overflow-x-hidden`}>
     {/* <div className={`page-two absolute z-100 w-full h-full top-0 bg-black`}></div> */}
     
 
@@ -88,8 +88,8 @@ export default function ManifestoPage() {
       <h1 className="secondText text-black text-[4vw] md:text-[2vw] whitespace-nowrap">HOW <span className="text-[#c80000] px-10">SHUNNO/O/OSHIM </span>
     CAME TO EXISTENCE </h1>
     </div> */}
-    <h1 className={`motto ${IBM.className} text-l md:text-xl italic`}>
-      THE ABYSS DOESN'T KNOW HOW VOID IT IS
+    <h1 className={`motto ${Hol.className} text-l md:text-xl italic`}>
+      The Abyss Doesn't know how void it is 
     </h1>
     <div className="flex flex-row items-center justify-start w-[90vw] md:w-[40vw]">
       <div className="lineup w-0 h-px m-4 bg-black"></div>
@@ -100,16 +100,16 @@ export default function ManifestoPage() {
       <section className="heroSection mb-50 flex w-full min-h-screen flex-col items-center justify-center">
         <div className="flex flex-col items-center text-left  justify-center m-4 w-[70vw] md:w-[60vw] h-full">
         <h2 className="heroText text-2.5xl border-b">THE ORIGIN</h2>
-        <p className="md:text-[2vw] text-[3vw] box-content text-justify my-4 heroText">
-        Before there was form, there was breath, there was scent, raw and sacred.
-        At shunno/o/oshim, we view scent not as a cosmetic enhancer rather as an substantial truth, something to be felt, something that carves something in the void of human soul. A bridge it is, spanning the total emptiness Shunno[zero] from which we emerge and the boundless cosmos Oshim[infinite] to which we return.
+        <p className="md:text-[2vw] text-[3.5vw] box-content text-justify whitespace-pre-wrap my-4 heroText  tracking-widest ">
+        Before there was form , there was breath , there was scent raw and sacred.
+        At shunno/o/oshim , we view scent not as a cosmetic enhancer rather as an substantial truth . Something to be felt , something that carves in the void of human soul . A bridge it is , spanning the total emptiness Shunno [ zero ] from which we emerge and the boundless Oshim [ infinite ] to which we return.
         </p>
         </div>
         <div className="flex flex-col items-center text-left  justify-center m-4 w-[70vw] md:w-[60vw] h-full">
 
         <h2 className="heroText text-2.5xl border-b">THE BLOOD OF THE EARTH</h2>
-        <p className="md:text-[2vw] text-[3vw] box-content text-justify my-4 heroText">
-        We take pride in crafting strictly with 100% natural, uncompromised raw materials. Rare wild ouds, raw animalic musks, and botanical extracts form our palette. These are not approximations, they are living, breathing extractions harvested from the earth and for the earthlings. 
+        <p className="md:text-[2vw] text-[3.5vw] box-content text-justify my-4 whitespace-pre-wrap heroText tracking-widest">
+        We take pride in crafting strictly with 100% natural, uncompromised raw materials. Rare wild ouds, raw animalic musks, and botanical extracts form our palette. These are not approximations, they are living, breathing extractions harvested from the earth - for the earthlings. 
         </p>
         </div>
       </section>

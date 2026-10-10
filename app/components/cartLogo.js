@@ -5,6 +5,11 @@ import Link from "next/link";
 import {useStore} from "./zustand"
 
 export const Hol = localFont({
+    src: '../fonts/myst.otf',
+    variable: '--font-hol',
+});
+
+export const num = localFont({
     src: '../fonts/holstein.ttf',
     variable: '--font-hol',
 });
@@ -26,7 +31,7 @@ export default function CartLogo() {
 
               <div className='flex flex-row items-center w-screen justify-end mt-4 m-2 inset-0 text-black '>     
                 <div className="flex flex-row items-center justify-center">
-                <span className={`${Hol.className} ${Hol.variable} md:text-[1.5vw] text-[5vw] px-2 py-0 bg-[#c80000] text-white rounded-full`}>{useStore(s=>s.items)}</span>
+                <span className={`${num.className} ${num.variable} md:text-[1.5vw] text-[5vw] px-2 py-0 bg-[#c80000] text-white rounded-full`}>{useStore(s=>s.items)}</span>
                 <Link  href="/cart" className="pointer-events-auto">
                 <div className="flex flex-row items-center justify-center border rounded-full p-1 mx-3">
                 <img src='/astb.svg' alt='Shopping basket' width="24" height="24" className='h-[3vh] m-2'>

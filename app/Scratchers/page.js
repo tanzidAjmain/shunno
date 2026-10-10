@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 
 export const Hol = localFont({
-  src: '../fonts/holstein.ttf', 
+  src: '../fonts/myst.otf', 
    variable: '--font-hol',
 });
 

@@ -9,7 +9,7 @@ const IBM = IBM_Plex_Mono({
 })
 
 export const Hol = localFont({
-  src: '../fonts/holstein.ttf', 
+  src: '../fonts/myst.otf', 
   variable: '--font-hol',
 });
 
@@ -18,7 +18,7 @@ export default function policyPage(){
         <div className="flex flex-col">
         <div className="flex justify-center w-full items-center">
             <h1 className={`${Hol.className} text-4xl p-4`}>
-                TERMS & CONDITION
+                TERMS & CONDITIONS
             </h1><span className={`${Hol.className} text-[#c80000] text-3xl`}>
                 *
             </span>

@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { useEffect } from 'react';
 
 const Hol = localFont({
-    src: '../fonts/holstein.ttf',
+    src: '../fonts/myst.otf',
     variable: '--font-hol',
 });
 
