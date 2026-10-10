@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import  * as textSplitter from 'gsap/SplitText'
-import next from 'next';
+
 
 
 
@@ -25,10 +25,6 @@ export const Num = localFont({
 
 
 export default function Home() {
-
-
-
-const router = useRouter()
 
 
   gsap.registerPlugin(useGSAP, textSplitter);
@@ -189,7 +185,7 @@ const router = useRouter()
     <h1 className="sr-only">Shunno O Oshim — independent natural niche perfumes</h1>
     <h2 className="sr-only">Explore The Garden, our collection of natural artisan fragrances</h2>
 
-      <div className="entry fixed bottom-3 opacity-0 w-full z-4 flex flex-col justify-end min-h-screen">
+<div className="entry fixed inset-x-0 bottom-0 opacity-0 z-4 flex w-full flex-col justify-end">
         <div className="flex flex-row  justify-between items-center w-full p-6">
      <div>
         <p className={`${Hol.className} ${Hol.variable} flex flex-row text-black md:text-[1vw] text-[3vw] `}>

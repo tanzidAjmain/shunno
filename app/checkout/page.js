@@ -152,7 +152,7 @@ export default function CheckoutPage() {
       cart.length&& cart.map((item, index) => (
         <div key={index} className='flex  flex-row items-center justify-between m-4 p-4 shadow-xl rounded-lg'>
               <div className='h-full p-2'>
-                <h1 className='text-[#c80000] p-2 border rounded-full'>{index+1}</h1>
+                <h1 className='border-[#c80000] p-2 border rounded-full'>{index+1}</h1>
               </div>
               <div className='flex flex-row items-center'>
               <div className='flex flex-col items-start justify-center h-full'>

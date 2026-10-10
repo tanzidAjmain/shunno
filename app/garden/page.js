@@ -106,7 +106,7 @@ gsap.ticker.lagSmoothing(0);
               <div className='flex flex-col ml-2 md:rounded-4xl rounded-b-4xl  items-start justify-center p-4'>
                 <div className='flex flex-row border-b w-full  min-w-[25vw] items-center justify-between gap-2 mb-2'>
                   <h2 className=" text-[5vw]  w-full whitespace-nowrap md:text-[1.5vw] font-bold pb-5">{product.name}</h2>
-                  <span className='text-[#c80000] pb-6 text-4xl'>*</span>
+                  {/* <span className='text-[#c80000] pb-6 text-4xl'>*</span> */}
                 </div>
               <div className='flex flex-row w-full items-center justify-between gap-2 mb-2'>
                 <p className='text-black text-l'>MEMBER OF :</p>
@@ -121,9 +121,9 @@ gsap.ticker.lagSmoothing(0);
                     rotation: 360,
                   }) 
                 }}  href={`/garden/${product.name}/${product.id}/${product.price}/${product.archive}`} className='w-full'>
-                <div className='flex mb-2 flex-row items-center justify-between  p-1 cursor-pointer rounded-4xl'>
-                <p className='hover:line-through decoration-[#c80000]'>* THE STORY</p>
-                  <img src='/arrow-up-right.svg' alt='' width="24" height="24" className='motion w-[5vw] md:w-[2vw] m-2 border rounded-full hover:rotate-45 hover:border-[#c80000] animate-pulse ease-in-out duration-300' />
+                <div className='flex mb-3 flex-row items-center justify-between border-b border-t   p-1 cursor-pointer'>
+                <p className='hover:line-through decoration-[#c80000]'>THE STORY</p>
+                  <img src='/astb.svg' alt='' width="10" height="10" className='motion w-[5vw] md:w-[2vw]   hover:rotate-180 hover:border-[#c80000]  ease-in-out duration-300' />
                 </div>
                 </Link>
 

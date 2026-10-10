@@ -17,7 +17,7 @@ export default function policyPage(){
     return(
         <div className="flex flex-col">
         <div className="flex justify-center w-full items-center">
-            <h1 className={`${Hol.className} text-4xl p-4`}>
+            <h1 className={`${Hol.className} text-2xl p-4`}>
                 TERMS & CONDITIONS
             </h1><span className={`${Hol.className} text-[#c80000] text-3xl`}>
                 *
