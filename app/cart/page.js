@@ -85,12 +85,12 @@ useEffect(() => {
                   ease: "power3.out",
                 });
               }}
-              className={`px-4 py-3  whitespace-nowrap  hover:border rounded-full border-[#c80000]  ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.1vw] font-bold`}>
+              className={`px-4 py-3  whitespace-nowrap  hover:line-through  decoration-[#c80000]  ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.1vw] font-bold`}>
                       check out
              </button>
 
              <button onClick={()=>{router.push("/garden")}} 
-              className={`px-4  mx-2 py-3 m-1  hover:border border-[#c80000] rounded-full ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.1vw] font-bold`}>
+              className={`px-4  mx-2 py-3 m-1   hover:line-through decoration-10  decoration-[#c80000]   ${Hol.className} ${Hol.variable} text-[3.5vw] md:text-[1.1vw] font-bold`}>
                       {/* <img src='/arrow-up-right.svg' alt='Continue shopping' width="24" height="24" className='-rotate-135 '/> */}
                       Back
              </button>

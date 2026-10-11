@@ -4,7 +4,9 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import  * as textSplitter from 'gsap/SplitText'
+import { SplitText } from "gsap/SplitText";
+
+// gsap.registerPlugin(useGSAP, SplitText);
 
 
 
@@ -27,12 +29,9 @@ export const Num = localFont({
 export default function Home() {
 
 
-  gsap.registerPlugin(useGSAP, textSplitter);
+  gsap.registerPlugin(useGSAP, SplitText);
 
   useGSAP(() => {
-
-    const splitter = textSplitter.SplitText.create(".headerText", { type: "lines, words" });
-
     const tl = gsap.timeline();
 
 
@@ -83,14 +82,31 @@ export default function Home() {
       ease: "expo.out",
     });
 
-    tl.from(splitter.words, {
-      // delay: 0.5,
-      y: 30,
-      skewY:10,
-      stagger: 0.18,
-      opacity: 0,
-      ease: "power3.out",
-    });
+    // Keep SplitText from preventing the loader timeline from starting on
+    // browsers where line measurement or font loading causes it to fail.
+    let splitter;
+    try {
+      splitter = SplitText.create(".headerText", { type: "lines, words" });
+    } catch (error) {
+      console.error("Unable to split the homepage header text:", error);
+    }
+
+    if (splitter?.words?.length) {
+      tl.from(splitter.words, {
+        y: 30,
+        skewY: 10,
+        stagger: 0.18,
+        opacity: 0,
+        ease: "power3.out",
+      });
+    } else {
+      tl.from(".headerText", {
+        y: 30,
+        opacity: 0,
+        stagger: 0.18,
+        ease: "power3.out",
+      });
+    }
 
     // tl.to(splitter.lines, {
     //   borderB: "1px solid #c80000",
@@ -103,7 +119,6 @@ export default function Home() {
    
     tl.to(".entry", {
       opacity: 1,
-      y: -30,
       ease: "power3.out",
     });
 
@@ -121,21 +136,21 @@ export default function Home() {
   return (
 
       
-    <section className={`${Hol.className} ${Hol.variable} bg-black `}>
+    <section className={`${Hol.className} ${Hol.variable} fixed inset-0 h-dvh w-full overflow-hidden overscroll-none bg-black`}>
 
     
 
-<div className='text-clip pointer-events-none flex flex-row items-center overflow-hidden justify-center md:text-[10vh] text-[30vw] px-5 h-full  w-full fixed z-999 bg-white '>
+<div className='text-clip pointer-events-none flex flex-row items-center overflow-hidden justify-center md:text-[10vh] text-[30vw] px-5 h-[100dvh] w-full fixed inset-0 z-999 bg-white '>
    
    {/* <div className='second-loader w-full h-full absolute bg-black top-300 left-0 pointer-events-none  z-999999997 '>
 
    </div> */}
 
-    <img src="/new-bg-soh.jpg" alt="Abstract visual identity of Shunno O Oshim" width="1720" height="880" className="bg-soh absolute h-screen w-screen object-cover">
+    <img src="/new-bg-soh.jpg" alt="Abstract visual identity of Shunno O Oshim" width="1720" height="880" className="bg-soh fixed h-[100dvh] w-full object-cover">
     </img>
     </div>
 
-    <div className='loader pointer-events-none w-screen h-screen fixed object-cover inset-0 flex flex-row items-center  justify-center md:text-[10vh] text-[30vw] px-5  z-99999 bg-black overflow-hidden '>
+    <div className='loader pointer-events-none w-full h-[100dvh] fixed object-cover inset-0 flex flex-row items-center  justify-center md:text-[10vh] text-[30vw] px-5  z-99999 bg-black overflow-hidden '>
     <p className={`${Num.className} ${Num.variable} loader-counter text-6xl md:text-8xl text-white`}>
       00
     </p>
@@ -181,11 +196,11 @@ export default function Home() {
    
   
 
-  <div className="flex w-full flex-col items-center justify-center min-h-screen">
+  <div className="flex h-full w-full flex-col items-center justify-center">
     <h1 className="sr-only">Shunno O Oshim — independent natural niche perfumes</h1>
     <h2 className="sr-only">Explore The Garden, our collection of natural artisan fragrances</h2>
 
-<div className="entry fixed inset-x-0 bottom-0 opacity-0 z-4 flex w-full flex-col justify-end">
+<div className="entry opacity-0 fixed  z-4 flex w-full flex-col justify-end h-full items-center  bottom-0 ">
         <div className="flex flex-row  justify-between items-center w-full p-6">
      <div>
         <p className={`${Hol.className} ${Hol.variable} flex flex-row text-black md:text-[1vw] text-[3vw] `}>
@@ -199,12 +214,14 @@ export default function Home() {
         </p>
        </div>
 
+      
+    <Link href='/garden' aria-label="Explore the perfume collection" onClick={nextAnim}>
        <div>
-
         <p className={`${Hol.className} ${Hol.variable} flex flex-row text-[#c80000] md:text-[1.1vw] text-[3vw] `}>
-         cemetry 
+         cemetery
         </p>
        </div>
+    </Link>
 
        <div onClick={nextAnim}>
         <Link href="/garden"aria-label="Explore the perfume collection" >
