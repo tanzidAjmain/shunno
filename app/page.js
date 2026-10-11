@@ -223,11 +223,11 @@ export default function Home() {
        </div>
     </Link>
 
-       <div onClick={nextAnim}>
+       {/* <div onClick={nextAnim}> */}
         <Link href="/garden"aria-label="Explore the perfume collection" >
-          <img width="24" height="24" className="gardenNav  w-[6vw] md:w-[2vw] rounded-full hover:border animate-pulse ease-in-out duration-30" src='/astb.svg' alt="" />
+          <img width="24" height="24" className="gardenNav  w-[6vw] md:w-[2vw] rounded-full hover:rotate-180 animate-pulse ease-in-out duration-30" src='/astb.svg' alt="" />
         </Link>
-       </div>
+       {/* </div> */}
         {/* <h1 className={`${Hol.className} ${Hol.variable} py-4 text-black md:text-[1.5vw]  text-[5vw] font-bold  `}>
         ----------------------
         </h1> */}
