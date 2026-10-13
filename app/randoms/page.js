@@ -4,7 +4,7 @@ import BottomMenu from "../components/bottom";
 import { DataProv } from "../components/provider";
 
   export const Hol = localFont({
-    src: '../fonts/myst.otf', 
+    src: '../fonts/holstein.ttf', 
      variable: '--font-hol',
   });
   

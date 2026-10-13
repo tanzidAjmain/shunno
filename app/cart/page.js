@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { useEffect } from 'react';
 
 const Hol = localFont({
-    src: '../fonts/myst.otf',
+    src: '../fonts/holstein.ttf',
     variable: '--font-hol',
 });
 
@@ -63,9 +63,9 @@ useEffect(() => {
       <div className='flex flex-row items-center justify-between h-full text-black '>
               <div className='flex flex-row justify-center h-full items-center'>
 
-              <h1 className='text-[3.5vw] p-4 md:text-[1.1vw] whitespace-nowrap m-3'>Subtotal: {cart.reduce((acc, item) => acc + item.price * item.amount, 0)} BDT. </h1>
+              <h1 className='text-[3.5vw] p-4 md:text-[1.1vw] whitespace-nowrap m-3'>SUBTOTAL: {cart.reduce((acc, item) => acc + item.price * item.amount, 0)} BDT. </h1>
               <div className=''>
-              <h1 className=' aster text-[#c80000] text-2xl'>*</h1>
+              <h1 className=' aster text-[#c80000] m-2 text-xl'>*</h1>
               </div>
               </div>
               {/* <div className=' border w-[50vw]'></div> */}

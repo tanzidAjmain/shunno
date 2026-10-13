@@ -12,7 +12,12 @@ import { useStore } from '../components/zustand';
 import { DataProv } from '../components/provider';
 
 export const Hol = localFont({
-  src: '../fonts/myst.otf', 
+  src: '../fonts/holstein.ttf', 
+   variable: '--font-hol',
+});
+
+  export const det = localFont({
+  src: '../fonts/type.ttf', 
    variable: '--font-hol',
 });
 
@@ -105,8 +110,8 @@ gsap.ticker.lagSmoothing(0);
 
               <div className='flex flex-col ml-2 md:rounded-4xl rounded-b-4xl  items-start justify-center p-4'>
                 <div className='flex flex-row border-b w-full  min-w-[25vw] items-center justify-between gap-2 mb-2'>
-                  <h2 className=" text-[5vw]  w-full whitespace-nowrap md:text-[1.5vw] font-bold pb-5">{product.name}</h2>
-                  {/* <span className='text-[#c80000] pb-6 text-4xl'>*</span> */}
+                  <h2 className=" text-2xl  w-full whitespace-nowrap md:text-3xl font-bold pb-5">{product.name}</h2>
+                  <span className='text-[#c80000]  text-4xl'>*</span>
                 </div>
               <div className='flex flex-row w-full items-center justify-between gap-2 mb-2'>
                 <p className='text-black text-l'>MEMBER OF :</p>
@@ -135,7 +140,7 @@ gsap.ticker.lagSmoothing(0);
                         <p className='text-[#c80000] text-l  w-full'> / Materials: <br/></p>
                       {
                         product.materials.map((material, index) => (
-                          <p key={index} className='text-black text-l'><span className='font-bold text-[#c80000]'></span>  {material},  <br/></p>
+                          <p key={index} className={`${det.className} text-xs`}><span className='font-bold text-[#c80000]'></span>  {material}  <br/></p>
                         ))
                       }
                       </div>
@@ -145,7 +150,7 @@ gsap.ticker.lagSmoothing(0);
               <p className='pb-2 border-y  '>/ Organic Percentage : <span className='text-[#c80000] font-bold'>{product.organicPercentage}</span>  <br/> 
               / Date: <span className='text-[#c80000] font-bold'>{product.date}</span>  <br/>
                / Produced Qty: <span className='text-[#c80000] font-bold'> 0{product.quantity} </span> <br/>
-               /<span className='text-[#c80000]'> {product.ml}ml</span> </p>
+               / Ml (s):<span className='text-[#c80000]'> {product.ml}ml</span> </p>
               {/* <p className="text-gray-700 box-content text-justify mb-4">{product.description}</p> */}
              
              <div className='flex flex-row w-full justify-between items-center' >

@@ -9,7 +9,7 @@ const IBM = IBM_Plex_Mono({
 })
 
 export const Hol = localFont({
-  src: '../fonts/myst.otf', 
+  src: '../fonts/holstein.ttf', 
   variable: '--font-hol',
 });
 

@@ -3,7 +3,7 @@ import  Link from "next/link";
 import localFont from "next/font/local";
 
 const Hol = localFont({
-  src: '../fonts/myst.otf',
+  src: '../fonts/holstein.ttf',
   variable: '--font-hol',
 });
 

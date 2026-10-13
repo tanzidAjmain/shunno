@@ -11,10 +11,16 @@ import { DataProv } from '../../components/provider';
 
 
   export const Hol = localFont({
-    src: '../../fonts/myst.otf', 
+    src: '../../fonts/holstein.ttf', 
      variable: '--font-hol',
   });
   
+   export const det = localFont({
+    src: '../../fonts/type.ttf', 
+     variable: '--font-hol',
+  });
+  
+
 
 export default function GardenProductPage() {
 
@@ -128,7 +134,7 @@ export default function GardenProductPage() {
         <h2 className={`text-2xl p-5 font-bold ${Hol.className} ${Hol.variable} text-black`}>
           THE THOUGHT BEHIND:
         </h2>
-      <p className={`w-[85%] mt-10 p-4 box-content bg-white  flex md:flex-row flex-col items-center justify-around ${Hol.className} ${Hol.variable} text-black text-justify `}>
+      <p className={`w-[85%] mt-5 p-4 box-content bg-white ${det.className} ${det.variable} flex md:flex-row flex-col items-center justify-around ${Hol.className} ${Hol.variable} text-black text-justify `}>
       {productDescription}
       </p>
 
@@ -145,7 +151,7 @@ export default function GardenProductPage() {
           inc({id:params?.details?.[1], image: productImage, name: productName, price: params?.details?.[2], amount:1})
 
         }} className={`px-4 py-2 text-[#c80000] hover:text-white rounded-xs border hover:bg-[#a01000] transition-colors duration-300 mt-10 ${Hol.className} ${Hol.variable} text-[4vw] md:text-[1.5vh] font-bold`}>
-            <span className="text-[#c80000]">*</span> ADD TO BASKET
+             ADD TO BASKET
         </button>
         </> : <></>
       }

@@ -15,7 +15,7 @@ import { SplitText } from "gsap/SplitText";
 
 
 export const Hol = localFont({
-  src: './fonts/myst.otf', 
+  src: './fonts/holstein.ttf', 
    variable: '--font-hol',
 });
 

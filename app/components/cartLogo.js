@@ -5,7 +5,7 @@ import Link from "next/link";
 import {useStore} from "./zustand"
 
 export const Hol = localFont({
-    src: '../fonts/myst.otf',
+    src: '../fonts/holstein.ttf',
     variable: '--font-hol',
 });
 

@@ -5,18 +5,19 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import localFont from "next/font/local";
 import BottomMenu from "../components/bottom";
-import { IBM_Plex_Mono } from "next/font/google";
+// import { IBM_Plex_Mono } from "next/font/google";
 
-const IBM = IBM_Plex_Mono({
-  subsets: ['latin'],
-  weight:"400"
+
+
+  export const det = localFont({
+    src: '../fonts/type.ttf', 
+     variable: '--font-hol',
+  });
   
-})
-
 
 
 export const Hol = localFont({
-  src: '../fonts/myst.otf', 
+  src: '../fonts/holstein.ttf', 
    variable: '--font-hol',
 });
 
@@ -88,8 +89,8 @@ export default function ManifestoPage() {
       <h1 className="secondText text-black text-[4vw] md:text-[2vw] whitespace-nowrap">HOW <span className="text-[#c80000] px-10">SHUNNO/O/OSHIM </span>
     CAME TO EXISTENCE </h1>
     </div> */}
-    <h1 className={`motto ${Hol.className} text-l md:text-xl italic`}>
-      The Abyss Doesn't know how void it is 
+    <h1 className={`motto ${Hol.className} text-xl md:text-xl italic`}>
+      The Abyss doesn't know how void it is 
     </h1>
     <div className="flex flex-row items-center justify-start w-[90vw] md:w-[40vw]">
       <div className="lineup w-0 h-px m-4 bg-black"></div>
@@ -98,17 +99,18 @@ export default function ManifestoPage() {
    </div>
    
       <section className="heroSection mb-50 flex w-full min-h-screen flex-col items-center justify-center">
-        <div className="flex flex-col items-center text-left  justify-center m-4 w-[70vw] md:w-[60vw] h-full">
+        <div className="flex flex-col items-center text-left  justify-center m-4 w-[80vw] md:w-[60vw] h-full">
         <h2 className="heroText text-2.5xl border-b">THE ORIGIN</h2>
-        <p className="md:text-[2vw] text-[3.5vw] box-content text-justify whitespace-pre-wrap my-4 heroText  tracking-widest ">
+        <p className={` ${det.className} ${det.variable} md:text-[2vw] text-[4.5vw] box-content text-justify whitespace-pre-wrap my-4 heroText  `}>
         Before there was form , there was breath , there was scent raw and sacred.
         At shunno/o/oshim , we view scent not as a cosmetic enhancer rather as an substantial truth . Something to be felt , something that carves in the void of human soul . A bridge it is , spanning the total emptiness Shunno [ zero ] from which we emerge and the boundless Oshim [ infinite ] to which we return.
         </p>
         </div>
-        <div className="flex flex-col items-center text-left  justify-center m-4 w-[70vw] md:w-[60vw] h-full">
+
+        <div className="flex flex-col items-center text-left  justify-center m-4 w-[80vw] md:w-[60vw] h-full">
 
         <h2 className="heroText text-2.5xl border-b">THE BLOOD OF THE EARTH</h2>
-        <p className="md:text-[2vw] text-[3.5vw] box-content text-justify my-4 whitespace-pre-wrap heroText tracking-widest">
+        <p className={` ${det.className} ${det.variable} md:text-[2vw] text-[4.5vw] box-content text-justify my-4 whitespace-pre-wrap heroText tracking-widest`}>
         We take pride in crafting strictly with 100% natural, uncompromised raw materials. Rare wild ouds, raw animalic musks, and botanical extracts form our palette. These are not approximations, they are living, breathing extractions harvested from the earth - for the earthlings. 
         </p>
         </div>
