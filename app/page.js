@@ -117,22 +117,18 @@ export default function Home() {
     
 
    
-    tl.to(".entry", {
-      opacity: 1,
-      ease: "power3.out",
-    });
+    // tl.to(".entry", {
+    //   delay: 2.5,
+    //   opacity: 1,
+    //   ease: "power3.out",
+    // });
 
     
+    
   });
-
-  const nextAnim = () => {
-    // const tl = gsap.timeline();
-    gsap.to(".gardenNav", {
-      delay: 0.2,
-      rotate: 360,
-    });
-  }
-
+  
+  
+  
   return (
 
       
@@ -140,17 +136,26 @@ export default function Home() {
 
     
 
-<div className='text-clip pointer-events-none flex flex-row items-center overflow-hidden justify-center md:text-[10vh] text-[30vw] px-5 h-[100dvh] w-full fixed inset-0 z-999 bg-white '>
+<div className='text-clip pointer-events-none flex flex-row items-center overflow-hidden justify-center md:text-[10vh] text-[30vw] px-5 h-dvh w-full fixed inset-0 z-999 bg-black'>
    
    {/* <div className='second-loader w-full h-full absolute bg-black top-300 left-0 pointer-events-none  z-999999997 '>
 
    </div> */}
-
-    <img src="/new-bg-soh.jpg" alt="Abstract visual identity of Shunno O Oshim" width="1720" height="880" className="bg-soh fixed h-[100dvh] w-full object-cover">
+  <div className='min-w-full h-full flex flex-col  items-center justify-between'>
+    <img className='entry animate-pulse  w-25 h-auto mt-10 ' src='/garden.png'/>
+   <Link href='/garden' aria-label="Explore the perfume collection" className="pointer-events-auto">
+    <div className='header hover:border-b border-[#c80000]  cursor-pointer flex flex-row items-center justify-center'>
+    {/* <img className='w-30 h-auto' src='/gate.png'/> */}
+    <p className='headerText text-xl py-15'>ENTER THE CEMETERY</p>
+    <p className='headerText text-xl mt-2 p-2 text-[#c80000]'>*</p>
+    </div>
+    </Link>
+  </div>
+    <img src="/bg-new-soh-2.jpg" alt="Visual identity of Shunno O Oshim" className="bg-soh fixed w-60, h-60 object-cover md:w-180 md:h-120 ">
     </img>
     </div>
 
-    <div className='loader pointer-events-none w-full h-[100dvh] fixed object-cover inset-0 flex flex-row items-center  justify-center md:text-[10vh] text-[30vw] px-5  z-99999 bg-black overflow-hidden '>
+    <div className='loader pointer-events-none w-full h-dvh fixed object-cover inset-0 flex flex-row items-center  justify-center md:text-[10vh] text-[30vw] px-5  z-99999 bg-black overflow-hidden '>
     <p className={`${Num.className} ${Num.variable} loader-counter text-6xl md:text-8xl text-white`}>
       00
     </p>
@@ -164,7 +169,7 @@ export default function Home() {
   
 
 
-    
+{/*     
       <div  className="header w-full fixed z-10 flex flex-row justify-between items-center px-5 py-3 ">
        
        <div>
@@ -189,19 +194,18 @@ export default function Home() {
         <p className="headerText md:text-[1vw]  text-[3vw] ">
          a long ago
         </p>
-        {/* <span className="animate-pulse text-2xl text-[#c80000] px-2">*</span> */}
-        {/* <div className='liner w-0 h-px bg-[#c80000]'></div> */}
+        
         </div>
       </div>
-   
+    */}
   
 
   <div className="flex h-full w-full flex-col items-center justify-center">
     <h1 className="sr-only">Shunno O Oshim — independent natural niche perfumes</h1>
     <h2 className="sr-only">Explore The Garden, our collection of natural artisan fragrances</h2>
 
-<div className="entry opacity-0 fixed  z-4 flex w-full flex-col justify-end h-full items-center  bottom-0 ">
-        <div className="flex flex-row  justify-between items-center w-full p-6">
+{/* <div className="entry opacity-0 fixed z-4 flex w-full flex-col justify-end h-full items-center bottom-0">
+        <div className="flex flex-row justify-between items-center w-full p-6">
      <div>
         <p className={`${Hol.className} ${Hol.variable} flex flex-row text-black md:text-[1vw] text-[3vw] `}>
          Visit
@@ -223,19 +227,16 @@ export default function Home() {
        </div>
     </Link>
 
-       {/* <div onClick={nextAnim}> */}
+  
         <Link href="/garden"aria-label="Explore the perfume collection" >
           <img width="24" height="24" className="gardenNav  w-[6vw] md:w-[2vw] rounded-full hover:rotate-180 animate-pulse ease-in-out duration-30" src='/astb.svg' alt="" />
         </Link>
-       {/* </div> */}
-        {/* <h1 className={`${Hol.className} ${Hol.variable} py-4 text-black md:text-[1.5vw]  text-[5vw] font-bold  `}>
-        ----------------------
-        </h1> */}
+    
         
-       </div>
+       </div> */}
 
     
-      </div>
+      {/* </div> */}
   </div>
 
 

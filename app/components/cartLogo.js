@@ -19,9 +19,9 @@ export default function CartLogo() {
     
 
     return (
-        <>
+        <div >
          {/* <div className={`page-two absolute z-100 w-full h-full top-0 bg-black`}></div> */}
-            <div className="fixed top-0 z-100 flex w-full items-center justify-between bg-white text-white">
+            <div className="fixed top-0 z-100 opacity-100 flex w-full items-center justify-between bg-white text-white">
               <Link href='/garden'>
               <Image src="/logo.jpg" alt="Shunno O Oshim" className="md:w-29 md:h-20" width={130} height={200}></Image>
               </Link>
@@ -49,7 +49,7 @@ export default function CartLogo() {
               </div>
             <div>
         </div>
-        </>
+        </div>
     )
 
 }

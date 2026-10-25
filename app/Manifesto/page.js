@@ -89,8 +89,8 @@ export default function ManifestoPage() {
       <h1 className="secondText text-black text-[4vw] md:text-[2vw] whitespace-nowrap">HOW <span className="text-[#c80000] px-10">SHUNNO/O/OSHIM </span>
     CAME TO EXISTENCE </h1>
     </div> */}
-    <h1 className={`motto ${Hol.className} text-xl md:text-xl italic`}>
-      The Abyss doesn't know how void it is 
+    <h1 className={`motto ${det.className} text-[20vw] md:text-[10vw] italic`}>
+      The Abyss doesn't know how void it is .
     </h1>
     <div className="flex flex-row items-center justify-start w-[90vw] md:w-[40vw]">
       <div className="lineup w-0 h-px m-4 bg-black"></div>

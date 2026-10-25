@@ -9,6 +9,11 @@ export const Hol = localFont({
    variable: '--font-hol',
 });
 
+export const det = localFont({
+  src: '../fonts/type.ttf', 
+   variable: '--font-det',
+});
+
 
 export default function ScratchersPage() {
 
@@ -34,31 +39,31 @@ export default function ScratchersPage() {
       </div>
 
     <div className="flex flex-row w-full p-2 items-center justify-center mt-10">
-      <button type="button" onClick={()=>{setC(true);setF(false);setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 text-xs rounded-2xl p-2 m-1 ">LEAVE A COMMENT?</button>
-      <button type="button" onClick={()=>{setR(true);setC(false); setF(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 text-xs rounded-2xl p-2 m-1">LEAVE A REVIEW?</button>
-      <button type="button" onClick={()=>{setF(true);setC(false); setR(false)}} className="border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 text-xs rounded-2xl p-2 m-1">LEAVE A FEEDBACK?</button>
+      <button type="button" onClick={()=>{setC(true);setF(false);setR(false)}} className={` ${det.className} ${det.variable}  border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 text-xs rounded-2xl p-2 m-1 `}>COMMENT?</button>
+      <button type="button" onClick={()=>{setR(true);setC(false); setF(false)}} className={` ${det.className} ${det.variable} border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 text-xs rounded-2xl p-2 m-1`}>REVIEW?</button>
+      <button type="button" onClick={()=>{setF(true);setC(false); setR(false)}} className={` ${det.className} ${det.variable} border cursor-pointer hover:bg-[#c80000] hover:text-white ease-in-out duration-200 text-xs rounded-2xl p-2 m-1`}>FEEDBACK?</button>
     </div>
 
     <div className="flex row w-full p-2 items-center justify-center mt-10 ">
     {
       c?
       <>
-      <textarea  className="p-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]" type="box" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Leave a comment" />
+      <textarea  className={` ${det.className} ${det.variable} p-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]`} type="box" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Leave a comment" />
       </>:<></>
     }
     {
       r?
       <>
       <div className="flex flex-col items-center justify-center">
-      <input placeholder="product name" className="p-2 mb-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[10vh] w-[75vw] md:w-[45vw]" value={product} type="text" onChange={(e) => setProduct(e.target.value)} />
-      <textarea className="p-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]" type="text" value={review} onChange={(e) => setReview(e.target.value)} placeholder="Leave a review" />
+      <input placeholder="product name" className={` ${det.className} ${det.variable} p-2 mb-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[10vh] w-[75vw] md:w-[45vw]`} value={product} type="text" onChange={(e) => setProduct(e.target.value)} />
+      <textarea className={` ${det.className} ${det.variable} p-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]`} type="text" value={review} onChange={(e) => setReview(e.target.value)} placeholder="Leave a review" />
       </div>
       </>:<></>
     }
     {
       f?
       <>
-      <textarea className="p-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]" value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder="Leave a feedback" />
+      <textarea className={` ${det.className} ${det.variable} p-2 text-xl resize-none selection:bg-[#c80000] overflow-scroll border rounded-2xl h-[35vh] w-[75vw] md:w-[45vw]`} value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder="Leave a feedback" />
       </>:<></>
     }
     </div>

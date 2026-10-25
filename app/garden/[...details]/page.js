@@ -75,12 +75,13 @@ export default function GardenProductPage() {
 
 
     <div className={`w-screen  min-h-screen p-5 bg-white mb-40 md:mb-0 flex md:flex-row flex-col items-center justify-around  ${Hol.className} ${Hol.variable} `}>
-      <div className="flex flex-row items-center justify-start w-full my-9">
-       <h1 className="text-2xl p-5 font-bold">
-        Story Behind : <br/><span className=" text-3xl whitespace-pre-wrap md:text-[4vw] ">{productName}</span> 
-        {/* <span className='mt-4 text-4xl'>↝</span> */}
-       </h1><br/>
-      </div>
+      
+      {/* <div className="flex flex-row items-center justify-start w-full my-9"> */}
+       {/* <h1 className="text-2xl italic p-5 font-bold">
+        Story Behind : 
+        </h1><br/> */}
+        <span className=" text-3xl whitespace-pre-wrap md:text-[4vw]  px-3 ">{productName}</span> 
+      {/* </div> */}
 
       <div className=''>
         <div className='circle-border-2 '>

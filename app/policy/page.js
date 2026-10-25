@@ -15,7 +15,7 @@ export const Hol = localFont({
 
 export default function policyPage(){
     return(
-        <div className="flex flex-col">
+        <div className="flex flex-col overflow-x-hidden w-full h-dvh bg-white">
         <div className="flex justify-center w-full items-center">
             <h1 className={`${Hol.className} text-2xl p-4`}>
                 TERMS & CONDITIONS

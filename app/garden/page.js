@@ -91,7 +91,7 @@ gsap.ticker.lagSmoothing(0);
 
     <CartLogo />
 
-      <section className={` ${Hol.className} ${Hol.variable} flex flex-col  items-center  justify-center min-h-screen  overflow-scroll mt-10 mb-40`}>
+      <section className={` ${Hol.className} ${Hol.variable} flex flex-col items-center  justify-center min-h-screen  overflow-scroll mt-10 mb-40`}>
         <h1 className="sr-only">The Garden — Shunno O Oshim natural niche perfume collection</h1>
         <h2 className="sr-only">Available natural perfumes and their stories</h2>
         
@@ -126,7 +126,7 @@ gsap.ticker.lagSmoothing(0);
                     rotation: 360,
                   }) 
                 }}  href={`/garden/${product.name}/${product.id}/${product.price}/${product.archive}`} className='w-full'>
-                <div className='flex mb-3 flex-row items-center justify-between border-b border-t   p-1 cursor-pointer'>
+                <div className='flex mb-3 flex-row items-center justify-between border-b border-t  cursor-pointer'>
                 <p className='hover:line-through decoration-[#c80000]'>THE STORY</p>
                   <img src='/astb.svg' alt='' width="10" height="10" className='motion w-[5vw] md:w-[2vw]   hover:rotate-180 hover:border-[#c80000]  ease-in-out duration-300' />
                 </div>
@@ -137,34 +137,34 @@ gsap.ticker.lagSmoothing(0);
                       <div className='flex flex-col items-startjustify-center'>
                         
                         <div className='flex flex-row w-full items-start justify-start flex-wrap mb-5 gap-1 text-justify'>
-                        <p className='text-[#c80000] text-l  w-full'> / Materials: <br/></p>
+                        <p className='text-l  w-full'> / Materials: <br/></p>
                       {
                         product.materials.map((material, index) => (
-                          <p key={index} className={`${det.className} text-xs`}><span className='font-bold text-[#c80000]'></span>  {material}  <br/></p>
+                          <p key={index} className={`${det.className} text-xs`}><span className='font-bold'></span>  {material}  <br/></p>
                         ))
                       }
                       </div>
                       </div>
                     </div>
                
-              <p className='pb-2 border-y  '>/ Organic Percentage : <span className='text-[#c80000] font-bold'>{product.organicPercentage}</span>  <br/> 
-              / Date: <span className='text-[#c80000] font-bold'>{product.date}</span>  <br/>
-               / Produced Qty: <span className='text-[#c80000] font-bold'> 0{product.quantity} </span> <br/>
-               / Ml (s):<span className='text-[#c80000]'> {product.ml}ml</span> </p>
+              <p className='pb-2 border-y  '>/ Organic Percentage : <span className=' font-bold'>{product.organicPercentage}</span>  <br/> 
+              / Date: <span className=' font-bold'>{product.date}</span>  <br/>
+               / Net Produced Qty. : <span className='font-bold'> {product.quantity} </span> <br/>
+               / Ml (s):<span className=''> {product.ml}</span> </p>
               {/* <p className="text-gray-700 box-content text-justify mb-4">{product.description}</p> */}
              
              <div className='flex flex-row w-full justify-between items-center' >
               <p className="text-gray-900 font-bold ">BDT. {product.price}</p>
               {
-                product.archive === "TRUE" ? <p className='text-[#c80000] font-bold'>STOCK KILLED</p> : <>
+                product.archive === "TRUE" ? <p className='text-[#c80000] font-bold'>Archived</p> : <>
               <button
                 onClick={()=>{
                   // console.log(useStore.getState().cart);
                   inc({id:product.id, image: product.image, name: product.name, price: product.price, amount:1})
                 }
-                } className="px-4 py-2 bg-[#c80000] text-white rounded-2xl hover:bg-[#a01000] transition-colors duration-300"
+                } className="px-4 py-2  text-black border-b border-[#c80000] cursor-pointer pointer-events-auto "
                 >
-                <span className='text-white'>*</span> Add
+                <span className='text-[#c80000]'>*</span> BASKET
               </button>
                 </>
               }
