@@ -2,7 +2,6 @@
 import localFont from 'next/font/local';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { SplitText } from "gsap/SplitText";
 
@@ -82,6 +81,13 @@ export default function Home() {
       ease: "expo.out",
     });
 
+    tl.to(".entry", {
+      y: -30,
+      opacity: 1,
+      stagger: 0.18,
+      ease: "power3.out",
+    });
+
     // Keep SplitText from preventing the loader timeline from starting on
     // browsers where line measurement or font loading causes it to fail.
     let splitter;
@@ -142,12 +148,12 @@ export default function Home() {
 
    </div> */}
   <div className='min-w-full h-full flex flex-col  items-center justify-between'>
-    <img className='entry animate-pulse  w-25 h-auto mt-10 ' src='/garden.png'/>
+    <img className='entry opacity-0  w-20 h-auto mt-25 ' src='/logo.jpg'/>
    <Link href='/garden' aria-label="Explore the perfume collection" className="pointer-events-auto">
-    <div className='header hover:border-b border-[#c80000]  cursor-pointer flex flex-row items-center justify-center'>
+    <div className='header line-through cursor-pointer flex flex-row items-center justify-center'>
     {/* <img className='w-30 h-auto' src='/gate.png'/> */}
-    <p className='headerText text-xl py-15'>ENTER THE CEMETERY</p>
-    <p className='headerText text-xl mt-2 p-2 text-[#c80000]'>*</p>
+    <p className='headerText text-[4vw]  decoration-[#c80000] md:text-[1.3vw] py-15'>ENTER  THE CEMETERY</p>
+    <p className='headerText text-[4vw] md:text-[1.3vw] mt-2 p-1 text-[#c80000]'>*</p>
     </div>
     </Link>
   </div>
@@ -162,7 +168,7 @@ export default function Home() {
     <p className={`${Num.className} ${Num.variable} text-[#c80000] text-[10vw] md:text-[5vw] ml-2`}>
       *
     </p>
-    <img src="/bw-logo.jpg" alt="Shunno O Oshim" width="222" height="246" className="logo pointer-events-none  absolute opacity-0 p-5 ">
+    <img src="/logo.jpg" alt="Shunno O Oshim"  className="logo pointer-events-none invert-100 absolute opacity-0 p-5 w-50 h-auto">
     </img>
     </div>
 

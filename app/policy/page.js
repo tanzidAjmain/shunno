@@ -17,11 +17,13 @@ export default function policyPage(){
     return(
         <div className="flex flex-col overflow-x-hidden w-full h-dvh bg-white">
         <div className="flex justify-center w-full items-center">
-            <h1 className={`${Hol.className} text-2xl p-4`}>
-                TERMS & CONDITIONS
-            </h1><span className={`${Hol.className} text-[#c80000] text-3xl`}>
+            
+            <span className={`${Hol.className} text-[#c80000] text-[10vw] md:text-[5.5vw] mt-10 `}>
                 *
             </span>
+            <h1 className={`${Hol.className} text-[10vw] md:text-[3.5vw] mt-10 `}>
+                TERMS & CONDITIONS
+            </h1>
         </div>
 
         <div className="flex w-full items-center justify-start m-3 md:m-10 border-b-2 ">

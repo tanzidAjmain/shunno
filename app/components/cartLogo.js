@@ -21,13 +21,19 @@ export default function CartLogo() {
     return (
         <div >
          {/* <div className={`page-two absolute z-100 w-full h-full top-0 bg-black`}></div> */}
-            <div className="fixed top-0 z-100 opacity-100 flex w-full items-center justify-between bg-white text-white">
-              <Link href='/garden'>
-              <Image src="/logo.jpg" alt="Shunno O Oshim" className="md:w-29 md:h-20" width={130} height={200}></Image>
+            <div className="fixed top-0 z-100 opacity-100 flex w-full flex-row items-center justify-between bg-white text-white">
+              
+                
+
+         
+
+              <Link href='/garden' className="pointer-events-auto flex ml-5  flex-row items-center justify-center">
+              <span className={`${Hol.className} ${Hol.variable} ml-5 text-[#c80000]`}>*</span>
+              <Image src="/logo.jpg" alt="Shunno O Oshim" className="w-18  h-auto  " width={130} height={200}></Image>
               </Link>
-              <div>
-                {/* <h1 className={`${Hol.className} ${Hol.variable} md:text-[1.5vw] text-[4vw] text-black`}> Garden </h1> */}
-              </div>
+        
+            
+
 
               <div className='flex flex-row items-center w-screen justify-end mt-4 m-2 inset-0 text-black '>     
                 <div className="flex flex-row items-center justify-center">

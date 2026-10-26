@@ -82,7 +82,7 @@ gsap.ticker.lagSmoothing(0);
 
   if (loading) return (
     <div className='animate-pulse flex flex-col items-center justify-center min-h-screen w-screen'>
-      <Image  src='/logo.jpg' alt='****' width={200} height={200} className='w-[40vw] md:w-[10vw] h-auto' />
+      <Image  src='/logo.jpg' alt='****' width={200} height={200} className='w-20 h-auto' />
     </div>
   )
 
