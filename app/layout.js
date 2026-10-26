@@ -30,10 +30,10 @@ const geistSans = Geist({
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: `${brandName} | Natural Niche Perfumes`, template: `%s | ${brandName}` },
+  title: { default: `${brandName} | `, template: `%s | ${brandName}` },
   description: siteDescription,
   applicationName: brandName,
-  keywords: ["Shunno O Oshim", "niche perfume", "natural perfume", "artisan fragrance", "oud perfume", "Bangladesh perfume"],
+  keywords: ["Shunno O Oshim", "niche perfume", "natural perfume", "artisan fragrance", "oud perfume", "Bangladesh perfume", "sartorial scents", "luxury fragrance", "perfume collection", "handcrafted perfume", "exclusive scents", 'hyper niche perfume', 'bespoke fragrance', 'olfactory art', 'perfume artistry', 'fragrance design', 'limited edition perfume', 'luxury olfaction'],
   authors: [{ name: brandName }],
   creator: brandName,
   publisher: brandName,

@@ -1,13 +1,13 @@
 import { siteUrl } from "../seo";
 
 export const metadata = {
-  title: "The Garden | Natural Niche Perfumes",
+  title: "The Cemetery",
   description:
-    "Explore The Garden of Shunno O Oshim: independent house with natural perfumes made with rare oud, animalic musk, and botanical extracts.",
+    "Explore The Cemetery of the Dead Garden: independent house with natural olfactory scents and perfumes made with rare oud, animalic musk, and botanical extracts.",
   alternates: { canonical: "/garden" },
   openGraph: {
-    title: "The Garden | Shunno O Oshim",
-    description: "A collection of independent natural niche perfumes.",
+    title: "The Cemetery | Shunno O Oshim",
+    description: "A collection of natural hyper-niche artisanal perfumes.",
     url: `${siteUrl}/garden`,
   },
 };
