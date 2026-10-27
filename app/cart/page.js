@@ -33,10 +33,11 @@ useEffect(() => {
               {/* <img src='/cat2.png' alt='cat' className='w-30 h-30 object-cover  mr-4' /> */}
         </div>
      : <>
-     <div className='flex flex-col items-center w-full overflow-x-hidden justify-center  inset-0 text-black '>
-              <h1 className='text-[8vw] md:text-[4vw] m-2'>BASKET <span className='text-[#c80000]'>*</span></h1>
-              {/* <p>some good choice(s)</p> */}
-      </div>
+    <div className="flex flex-row w-full items-center justify-center">
+         <span className="text-[#c80000]  text-[8vw] md:text-[5vw]">* </span>
+        <h1 className="text-black text-[10vw] md:text-[3.5vw]">
+            BASKET </h1>
+        </div>
       {
         cart.map((item, index) => (
           <div key={index} className='flex  flex-col md:flex-row items-center justify-between m-4 p-4 shadow-xl rounded-lg'>

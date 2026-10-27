@@ -153,21 +153,24 @@ gsap.ticker.lagSmoothing(0);
                / Ml (s):<span className=''> {product.ml}</span> </p>
               {/* <p className="text-gray-700 box-content text-justify mb-4">{product.description}</p> */}
              
-             <div className='flex flex-row w-full justify-between items-center' >
-              <p className="text-gray-900 font-bold ">BDT. {product.price}</p>
+             <div className='flex flex-row mt-3  w-full justify-between items-center' >
+           
+              <p className=' font-bold'> {product.price} BDT.</p>
+            <div className='flex flex-col min-h-full items-center justify-center'>
               {
-                product.archive === "TRUE" ? <p className='text-[#c80000] font-bold'>Archived</p> : <>
+                 product.archive === "TRUE" ? <p className='text-[#c80000] font-bold'>ARCHIVED</p> : 
+                <>
               <button
                 onClick={()=>{
                   // console.log(useStore.getState().cart);
                   inc({id:product.id, image: product.image, name: product.name, price: product.price, amount:1})
                 }
-                } className="px-4 py-2  text-black border-b border-[#c80000] cursor-pointer pointer-events-auto "
-                >
-                <span className='text-[#c80000]'>*</span> BASKET
+              } className={`px-4  text-[#c80000] hover:text-white rounded-xs border hover:bg-[#c80000] transition-colors duration-300  ${Hol.className} ${Hol.variable} text-[4vw] md:text-[1.5vh] font-bold`}>
+                     ADD TO BASKET
               </button>
-                </>
-              }
+            </>
+            }
+              </div>
              </div>
             </div>
             </div>

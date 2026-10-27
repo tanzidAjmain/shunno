@@ -157,7 +157,7 @@ export default function Home() {
     </div>
     </Link>
   </div>
-    <img src="/bg-new-soh-2.jpg" alt="Visual identity of Shunno O Oshim" className="bg-soh fixed w-60, h-60 object-cover md:w-180 md:h-120 ">
+    <img src="/bg-new-soh.jpg" alt="Visual identity of Shunno O Oshim" className="bg-soh fixed w-60, h-60 object-cover md:w-180 md:h-120 ">
     </img>
     </div>
 
