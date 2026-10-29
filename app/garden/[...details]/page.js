@@ -144,16 +144,18 @@ export default function GardenProductPage() {
       </div>
       {productNoteDiagram && <img src={productNoteDiagram} alt={`Scent note diagram for ${productName}`} width="1200" height="1200" className="w-[85%] mt-2 p-4 bg-white flex md:flex-row md:w-[35%] flex-col items-center justify-around line-through decoration-[#c80000]" />}
     </span>
-    <div className="w-screen flex items-center justify-center mb-6">
+    <div className="w-full flex items-center justify-center mb-6">
       {
         params?.details?.[3] === "FALSE" ? <>
         
         <button onClick={()=>{
           inc({id:params?.details?.[1], image: productImage, name: productName, price: params?.details?.[2], amount:1})
 
-        }} className={`px-4 py-2 text-[#c80000] hover:text-white rounded-xs border hover:bg-[#c80000] transition-colors duration-300 mt-10 ${Hol.className} ${Hol.variable} text-[4vw] md:text-[1.5vh] font-bold`}>
-             ADD TO BASKET
-        </button>
+        }}  className={`mt-2 w-[30vw] cursor-pointer rounded-xs border px-4 text-2xl font-bold text-[#c80000] transition-colors duration-300 hover:bg-[#c80000] hover:text-white md:text-[2.5vh] ${Hol.className} ${Hol.variable}`}
+           >
+             +
+           </button>
+    
         </> : <></>
       }
     </div>

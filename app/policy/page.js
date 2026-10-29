@@ -89,7 +89,7 @@ export default function policyPage(){
         
         <div className={`${IBM.className}  flex w-full  justify-center`}>
         <p className="text-justify w-[70vw] p-05 mt-10 text-[4vw] md:text-3xl" >
-            SHUNNO /O/ OSHIM targets to deliver all orders within the stated delivery time. If the delivery has not taken place within 30 days of payment, the customer has the right to cancel the order free of charge and is entitled to a full refund including shipping costs.
+            SHUNNO /O/ OSHIM targets to deliver all orders within the stated delivery time. If the delivery has not taken place within 30 days of payment, the customer has the right to cancel the order free of charge and is entitled to a full refund.
         </p>
         </div>
 

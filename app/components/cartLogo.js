@@ -33,7 +33,12 @@ export default function CartLogo() {
 
               {/* <span className={`${Hol.className} ${Hol.variable} ml-5 text-[#c80000]`}>*</span> */}
              <div>
-              <Image src="/logo.jpg" alt="Shunno O Oshim" className="w-15  h-auto mx-5 my-4  " width={130} height={200}></Image>
+              {
+                useStore(s=>s.items)==0 ? 
+                <>
+                    <Image src="/logo.jpg" alt="Shunno O Oshim" className="w-15  h-auto mx-5 my-4  " width={130} height={200}></Image>
+                </>:<></>
+              }
               
              </div>
         
