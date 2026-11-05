@@ -82,9 +82,7 @@ export default function Home() {
     });
 
     tl.to(".entry", {
-      y: -30,
       opacity: 1,
-      stagger: 0.18,
       ease: "power3.out",
     });
 
