@@ -87,7 +87,7 @@ export default function ManifestoPage() {
     <div className="flex w-full min-h-screen flex-col items-center justify-center">
       <img src="/logo.jpg" alt="Shunno O Oshim" width="732" height="546" className="manImage fixed "/>
       
-    <h1 className={`motto ${Hol.className} p-1 whitespace-pre-line text-[20vw]   md:text-[10vw] italic`}>
+    <h1 className={`motto ${Hol.className} -mt-10 p-1 whitespace-pre-line text-[20vw]   md:text-[10vw] italic`}>
       The Abyss doesn't know how void it is .
     </h1>
     <div className="flex flex-row items-center justify-start w-[90vw] md:w-[40vw]">

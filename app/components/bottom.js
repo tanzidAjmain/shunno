@@ -15,11 +15,11 @@ export default function BottomMenu() {
     const pathname = usePathname();
     const isActive = (href) => pathname === href || (href === '/garden' && pathname?.startsWith('/garden/'));
     const links = [
-      { label: 'CEMETERY', href: '/garden', className: 'md:text-[1.2vw] hover:line-through decoration-[#c80000] p-2 text-[3.5vw] leading-none' },
-      { label: 'MANIFESTO', href: '/Manifesto', className: 'md:text-[1.2vw] p-2 text-justify hover:line-through decoration-[#c80000] duration-1000 text-[3.5vw] leading-none' },
-      { label: 'RANDOMS', href: '/randoms', className: 'md:text-[1.2vw] p-2 text-justify hover:line-through decoration-[#c80000] text-[3.5vw] leading-none' },
-      { label: 'SCRATCHERS', href: '/Scratchers', className: 'md:text-[1.2vw] p-2 text-justify hover:line-through decoration-[#c80000] text-[3.5vw] leading-none' },
-      { label: 'CONDITIONS', href: '/policy', className: 'md:text-[1.2vw] hover:line-through decoration-[#c80000] p-2 text-[3.5vw] leading-none' },
+      { label: 'CEMETERY', href: '/garden', className: 'md:text-[1.2vw] hover:line-through decoration-[#c80000] px-2 text-[3.5vw] leading-none' },
+      { label: 'MANIFESTO', href: '/Manifesto', className: 'md:text-[1.2vw] px-2 text-justify hover:line-through decoration-[#c80000] duration-1000 text-[3.5vw] leading-none' },
+      { label: 'RANDOMS', href: '/randoms', className: 'md:text-[1.2vw] px-2 text-justify hover:line-through decoration-[#c80000] text-[3.5vw] leading-none' },
+      { label: 'SCRATCHERS', href: '/Scratchers', className: 'md:text-[1.2vw] px-2 text-justify hover:line-through decoration-[#c80000] text-[3.5vw] leading-none' },
+      { label: 'CONDITIONS', href: '/policy', className: 'md:text-[1.2vw] hover:line-through decoration-[#c80000] px-2 text-[3.5vw] leading-none' },
     ];
 
 
