@@ -6,6 +6,10 @@ export const useStore = create((set) => ({
     detImage:"",
     desc:"",
     noteDiagraph:"",
+    organicPercentage:"",
+    producedQty:"",
+    ml:"",
+    materials:[],
     albumImages:[],
     increase: (payload = {}) =>
       set((state) => {
@@ -27,6 +31,10 @@ export const useStore = create((set) => ({
       setDesc: (description) => set({ desc: description }),
       setNoteDiagraph: (diagraph) => set({ noteDiagraph: diagraph }),
       setMoreImages: (images) => set({ albumImages: images }),
+      setOrganicPercentage: (percentage) => set({ organicPercentage: percentage }),
+      setProducedQty: (qty) => set({ producedQty: qty }),
+      setMl: (ml) => set({ ml }),
+      setMaterials: (materials) => set({ materials }),
       removeItem:(id) => 
         set((state) => {
             const itemToRemove = state.cart.find(item => item.id === id);

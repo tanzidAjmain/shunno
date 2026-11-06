@@ -30,6 +30,10 @@ export default function GardenPage() {
   const setNoteDiagraph = useStore((s) => s.setNoteDiagraph);
   const setMoreImages = useStore((s) => s.setMoreImages);
   const inc = useStore((s) => s.increase);
+  const setOrganicPercentage = useStore((s) => s.setOrganicPercentage);
+  const setProducedQty = useStore((s) => s.setProducedQty);
+  const setMl = useStore((s) => s.setMl);
+  const setMaterials = useStore((s) => s.setMaterials);
 
   if (loading) {
     return (
@@ -49,6 +53,10 @@ export default function GardenPage() {
     setDesctn(product.description);
     setNoteDiagraph(product.notediagraph);
     setMoreImages(product.moreImages);
+    setOrganicPercentage(product.organicPercentage);
+    setProducedQty(product.quantity);
+    setMl(product.ml);
+    setMaterials(product.materials);
     gsap.to('.motion', { rotation: 360 });
   };
 
@@ -83,7 +91,7 @@ export default function GardenPage() {
                 alt={product.name || 'Product'}
                 priority={idx === 0}
                 fill
-                className="pointer-events-auto backdrop-blur-2xl bg-white/30 select-none object-contain p-20"
+                className="pointer-events-auto backdrop-blur-2xl select-none object-contain p-20"
                 />
               </Link>
             </SwiperSlide>

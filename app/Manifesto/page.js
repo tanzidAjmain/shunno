@@ -36,7 +36,7 @@ export default function ManifestoPage() {
  
     const mottosplit = SplitText.create(".motto", {type:"words, lines"})
   
-    const tween = gsap.from(split.words, {
+  tl.from(split.words, {
       opacity: 0,
       y: 48,
       color: "#c80000",
@@ -70,6 +70,7 @@ export default function ManifestoPage() {
 
 
     gsap.from(mottosplit.words,{
+      delay:1,
       opacity:0,
       y:48,
       stagger:0.118,
@@ -85,11 +86,8 @@ export default function ManifestoPage() {
 
     <div className="flex w-full min-h-screen flex-col items-center justify-center">
       <img src="/logo.jpg" alt="Shunno O Oshim" width="732" height="546" className="manImage fixed "/>
-      {/* <div className="flex flex-row w-full items-center justify-center">
-      <h1 className="secondText text-black text-[4vw] md:text-[2vw] whitespace-nowrap">HOW <span className="text-[#c80000] px-10">SHUNNO/O/OSHIM </span>
-    CAME TO EXISTENCE </h1>
-    </div> */}
-    <h1 className={`motto ${det.className} whitespace-pre-line text-[20vw] md:text-[10vw] italic`}>
+      
+    <h1 className={`motto ${Hol.className} p-1 whitespace-pre-line text-[20vw]   md:text-[10vw] italic`}>
       The Abyss doesn't know how void it is .
     </h1>
     <div className="flex flex-row items-center justify-start w-[90vw] md:w-[40vw]">

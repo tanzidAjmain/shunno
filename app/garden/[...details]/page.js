@@ -33,6 +33,10 @@ export default function GardenProductPage() {
   const description = useStore(s=> s.desc);
   const noteDiagraph = useStore(s=> s.noteDiagraph);
   const detailImage = useStore(s=> s.detImage);
+  const organicPercentage = useStore(s=> s.organicPercentage);
+  const producedQty = useStore(s=> s.producedQty);
+  const ml = useStore(s=> s.ml);
+  const materials = useStore(s=> s.materials);
   const { products } = DataProv();
 
        const rawName = params?.details?.[0] ?? "";
@@ -75,21 +79,22 @@ export default function GardenProductPage() {
 
 
     <div className={`w-screen  min-h-screen p-5 bg-white mb-40 md:mb-0 flex md:flex-row flex-col items-center justify-around  ${Hol.className} ${Hol.variable} `}>
-      
-      {/* <div className="flex flex-row items-center justify-start w-full my-9"> */}
-       {/* <h1 className="text-2xl italic p-5 font-bold">
-        Story Behind : 
-        </h1><br/> */}
-        <span className=" text-3xl whitespace-pre-wrap md:text-[4vw]  px-3 ">{productName}</span> 
-      {/* </div> */}
-
-      <div className=''>
+        <div className=''>
         <div className='circle-border-2 '>
         <div className='circle-border'>
         <img src={productImage} alt={`${productName} niche perfume by Shunno O Oshim`} width="1200" height="1200" className="w-[85%] md:w-[95%] h-auto m-5 rounded-3xl line-through decoration-[#c80000] "/>
      </div>
       </div>
       </div>
+
+      <div>
+        <p className='py-3  border-b'>THE STORY BEHIND:</p>
+        <span className=" text-3xl whitespace-pre-wrap md:text-[4vw]  text-black  p-2 px-0 ">{productName}</span> 
+        {/* <p className='py-3'>
+          bruhuwhfishfiushfiusdhfuisd
+        </p> */}
+      </div>
+
     </div>
     </div>
 
@@ -130,16 +135,22 @@ export default function GardenProductPage() {
       </div>
       </div>
     )}
+      
     <span className="w-[85%] min-h-screen mt-20 flex flex-col md:flex-row items-center justify-center m-auto">
-      <div className="h-[45%] items-start">
-        <h2 className={`text-2xl p-5 font-bold ${Hol.className} ${Hol.variable} text-black`}>
+      <div className="h-[45%] w-full ">
+        <h2 className={`text-2xl p-0 font-bold ${Hol.className} ${Hol.variable} text-black`}>
           THE THOUGHT BEHIND:
         </h2>
-      <p className={`w-[85%] mt-5 p-4 box-content bg-white ${det.className} ${det.variable} flex md:flex-row flex-col items-center justify-around ${Hol.className} ${Hol.variable} text-black text-justify `}>
+      <p className={`w-full md:w-[65%] mt-5 p-0 box-content bg-white ${det.className} ${det.variable} flex md:flex-row flex-col items-center justify-start ${Hol.className} ${Hol.variable} text-black text-justify `}>
       {productDescription}
       </p>
 
-    
+    <div className={`${det.className} ${det.variable}  flex p-4 flex-col text-justify border text-[2.5vw] md:text-[.9vw] w-full md:w-[65%] h-full whitespace-pre-wrap items-start justify-start  bg-white mt-5 text-black`}>
+      <p><span className='text-[#c80000]'>//</span> ORGANIC PERCENTAGE : {organicPercentage}%</p>
+      <p><span className='text-[#c80000]'>//</span> PRODUCED QUANTITY : {producedQty}</p>
+      <p><span className='text-[#c80000]'>//</span> ML(S) : {ml}</p>
+      <p><span className='text-[#c80000] '>//</span> MATERIALS : {materials.join(", ")}</p>
+      </div>
 
       </div>
       {productNoteDiagram && <img src={productNoteDiagram} alt={`Scent note diagram for ${productName}`} width="1200" height="1200" className="w-[85%] mt-2 p-4 bg-white flex md:flex-row md:w-[35%] flex-col items-center justify-around line-through decoration-[#c80000]" />}
