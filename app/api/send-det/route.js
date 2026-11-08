@@ -61,13 +61,13 @@ export async function POST(request) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      body { margin: 0; padding: 0; background-color: #ffffff; font-family: Arial, Helvetica, sans-serif; }
+      body { margin: 0; padding: 0; background-color: #000000; font-family: Arial, Helvetica, sans-serif; }
       table { border-collapse: collapse; }
     </style>
   </head>
   <body>
     <!-- Background Wrapper Table -->
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; padding: 40px 10px;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #000000; padding: 40px 10px;">
       <tr>
         <td align="center">
           
@@ -109,11 +109,11 @@ export async function POST(request) {
                   WHAT IS HEADING UP TO YOU:
                 </p>
                 <div style="background-color: #1f1f1f; border-radius: 6px; padding: 12px 20px; display: inline-block;">
-                  <p style="margin: 0; font-size: 15px; font-weight: 600; color: #ffffff;">
-                    &gt; ${orderName.join(", ")}
+                  <p style="margin: 0; font-size: 10px; font-weight: 600; color: #ffffff;">
+                    -- ${orderName.join(", ")}
                   </p>
-                  <p style="margin: 0; font-size: 15px; font-weight: 600; color: #ffffff;">
-                    &gt; ${subTotal} BDT
+                  <p style="margin: 0; font-size: 10px; font-weight: 600; color: #ffffff;">
+                    -- ${subTotal} BDT
                   </p>
                 </div>
               </td>
